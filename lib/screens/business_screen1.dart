@@ -157,9 +157,8 @@ class BusinessScreen1State extends State<BusinessScreen1> {
                 borderWidth: 2,
                 onPress: () {
                   setState(() {
-                    _buttonColor = Color.fromARGB(
-                        255, 255, 72, 0); // Change color on click
-                    _buttonWidth = 300; // Width after button click
+                    _buttonColor = Color.fromARGB(255, 255, 72, 0);
+                    _buttonWidth = 300;
                   });
                   Future.delayed(Duration(milliseconds: 0), () {
                     _onNextPressed();

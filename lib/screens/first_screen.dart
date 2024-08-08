@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:digi_khata/buttons.dart';
+import 'package:digi_khata/widgets/buttons.dart';
 import 'second_screen.dart';
 
 class FirstScreen extends StatelessWidget {

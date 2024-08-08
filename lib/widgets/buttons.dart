@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 class LanguageButton extends StatelessWidget {
   final String text;
   final double height;
-  LanguageButton(this.text, {this.height = 48.0}); // Default height set to 48.0
+  LanguageButton(this.text, {this.height = 48.0});
   @override
   Widget build(BuildContext context) {
     return Container(
       height: height,
-      width: 120, // Set a fixed width for uniformity
+      width: 120,
       child: TextButton(
         onPressed: () {
-          // Handle language selection
           Navigator.pop(context);
         },
         style: TextButton.styleFrom(
@@ -19,9 +18,8 @@ class LanguageButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
             side: BorderSide(
-              color: Color.fromARGB(255, 255, 255, 255)
-                  .withOpacity(0.8), // Very light border color
-              width: 1, // Thin border width
+              color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.8),
+              width: 1,
             ),
           ),
         ),

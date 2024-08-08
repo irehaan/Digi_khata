@@ -60,7 +60,7 @@ class BusinessScreen3State extends State<BusinessScreen3> {
   void _onButtonPressed(int index) {
     setState(() {
       _selectedButtonIndex = index;
-      _isOthersSelected = index == 5; // Check if "Others" button is selected
+      _isOthersSelected = index == 5;
     });
   }
 
@@ -163,7 +163,7 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                                 child: Row(
                                   children: [
                                     Image.asset(
-                                      'assets/dg22.png', // Icon same as "Services"
+                                      'assets/dg22.png',
                                       width: 29,
                                       height: 200,
                                     ),
@@ -195,7 +195,7 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                                 child: Row(
                                   children: [
                                     Image.asset(
-                                      'assets/dg23.png', // Icon for "Others"
+                                      'assets/dg23.png',
                                       width: 29,
                                       height: 100,
                                     ),
@@ -226,17 +226,15 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
                                   side: BorderSide(
                                     color: _selectedButtonIndex == index
-                                        ? Color.fromARGB(
-                                            255, 245, 58, 1) // Dark orange
-                                        : Color.fromARGB(255, 249, 249,
-                                            249), // Default color
+                                        ? Color.fromARGB(255, 245, 58, 1)
+                                        : Color.fromARGB(255, 249, 249, 249),
                                   ),
                                 ),
                                 child: Row(
                                   children: [
                                     Image.asset(
                                       buttonImages[index],
-                                      width: 29, // Adjust size as needed
+                                      width: 29,
                                       height: 100,
                                     ),
                                     SizedBox(width: 8),
@@ -264,7 +262,7 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                           labelStyle: TextStyle(
                               color: const Color.fromARGB(255, 255, 51, 0),
                               fontSize: 13),
-                          border: UnderlineInputBorder(), // Only underline
+                          border: UnderlineInputBorder(),
                         ),
                       ),
                     ),
@@ -296,9 +294,8 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                 borderWidth: 2,
                 onPress: () {
                   setState(() {
-                    _buttonColor = Color.fromARGB(
-                        255, 255, 72, 0); // Change color on click
-                    _buttonWidth = 300; // Width after button click
+                    _buttonColor = Color.fromARGB(255, 255, 72, 0);
+                    _buttonWidth = 300;
                   });
                   Future.delayed(Duration(milliseconds: 0), () {
                     _onNextPressed();
