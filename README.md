@@ -1,2 +1,2 @@
 # Digi_khata
-cloning of digi_khata
+clonning of digi_khata
