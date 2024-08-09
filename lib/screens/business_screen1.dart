@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'business_screen2.dart';
 import 'package:digi_khata/widgets/cards_widget.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
+import 'package:digi_khata/widgets/image_paths.dart';
 
 class BusinessScreen1 extends StatefulWidget {
   @override
@@ -14,20 +15,6 @@ class BusinessScreen1State extends State<BusinessScreen1> {
   Color _buttonColor = Color.fromARGB(255, 255, 91, 26);
 
   final List<String> cardTitles = List<String>.filled(12, " ");
-  final List<String> imagePaths = [
-    'assets/dg6.jpeg',
-    'assets/dg7.jpeg',
-    'assets/dg8.jpeg',
-    'assets/dg9.jpeg',
-    'assets/dg10.jpeg',
-    'assets/dg11.jpeg',
-    'assets/dg12.jpeg',
-    'assets/dg13.jpeg',
-    'assets/dg14.jpeg',
-    'assets/dg15.jpeg',
-    'assets/dg16.jpeg',
-    'assets/dg17.jpeg',
-  ];
 
   void _onNextPressed() {
     Navigator.push(

@@ -2,6 +2,7 @@ import 'package:digi_khata/screens/busineess_screen5.dart';
 import 'package:flutter/material.dart';
 import 'package:digi_khata/widgets/cards_widget.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
+import 'package:digi_khata/widgets/image_paths.dart';
 
 class BusinessScreen4 extends StatefulWidget {
   @override
@@ -15,37 +16,31 @@ class BusinessScreen4State extends State<BusinessScreen4> {
   bool _isOthersSelected = false;
 
   final List<String> cardTitles = List<String>.filled(12, " ");
-  final List<String> imagePaths = [
-    'assets/dg6.jpeg',
-    'assets/dg7.jpeg',
-    'assets/dg8.jpeg',
-    'assets/dg9.jpeg',
-    'assets/dg10.jpeg',
-    'assets/dg11.jpeg',
-    'assets/dg12.jpeg',
-    'assets/dg13.jpeg',
-    'assets/dg14.jpeg',
-    'assets/dg15.jpeg',
-    'assets/dg16.jpeg',
-    'assets/dg17.jpeg',
-  ];
 
   final List<String> buttonTexts = [
-    'Retailer/shop',
-    'Wholesaler',
-    'Distributor',
-    'Manufacturer',
-    'Services',
+    'Kirana/Grocery',
+    'Textile/Fashion',
+    'Medical',
+    'Electronics',
+    'Mobile',
+    'Automobile',
+    'Sports',
+    'Kids/Toys',
+    'Hardware/Tools',
     'Others',
   ];
 
   final List<String> buttonImages = [
-    'assets/dg18.png',
-    'assets/dg19.png',
-    'assets/dg20.png',
-    'assets/dg21.png',
-    'assets/dg22.png',
-    'assets/dg23.png',
+    'assets/dg24.png',
+    'assets/dg25.png',
+    'assets/dg26.png',
+    'assets/dg27.png',
+    'assets/dg28.png',
+    'assets/dg29.png',
+    'assets/dg30.png',
+    'assets/dg31.png',
+    'assets/dg32.png',
+    'assets/dg33.png',
   ];
 
   Color _buttonColor = Color.fromARGB(255, 255, 91, 26);
@@ -60,7 +55,7 @@ class BusinessScreen4State extends State<BusinessScreen4> {
   void _onButtonPressed(int index) {
     setState(() {
       _selectedButtonIndex = index;
-      _isOthersSelected = index == 5;
+      _isOthersSelected = index == 9;
     });
   }
 
@@ -128,10 +123,9 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                       imagePaths: imagePaths,
                     ),
                   ),
-                  SizedBox(height: 2),
                   Text(
-                    'What is your Business Type?',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    'What is your Business Category?',
+                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
                   ),
                   Padding(
                     padding:
@@ -156,9 +150,6 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                                   padding: EdgeInsets.all(14),
                                   elevation: 1,
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
-                                  side: BorderSide(
-                                    color: Color.fromARGB(255, 245, 58, 1),
-                                  ),
                                 ),
                                 child: Row(
                                   children: [
@@ -169,11 +160,12 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                                     ),
                                     SizedBox(width: 8),
                                     Text(
-                                      'All',
+                                      'All Categories',
                                       style: TextStyle(
                                           fontSize: 14,
                                           color: const Color.fromARGB(
-                                              255, 0, 0, 0)),
+                                              255, 0, 0, 0),
+                                          fontWeight: FontWeight.normal),
                                     ),
                                   ],
                                 ),
@@ -195,7 +187,7 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                                 child: Row(
                                   children: [
                                     Image.asset(
-                                      'assets/dg23.png',
+                                      buttonImages[9],
                                       width: 29,
                                       height: 100,
                                     ),
@@ -241,9 +233,10 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                                     Text(
                                       buttonTexts[index],
                                       style: TextStyle(
-                                          fontSize: 14,
+                                          fontSize: 13,
                                           color: const Color.fromARGB(
-                                              255, 0, 0, 0)),
+                                              255, 0, 0, 0),
+                                          fontWeight: FontWeight.normal),
                                     ),
                                   ],
                                 ),
@@ -257,12 +250,22 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 16.0, vertical: 3),
                       child: TextField(
-                        decoration: InputDecoration(
-                          labelText: 'Enter business type',
+                        cursorColor: const Color.fromARGB(255, 255, 81, 0),
+                        decoration: const InputDecoration(
+                          labelText: 'Enter business category',
                           labelStyle: TextStyle(
-                              color: const Color.fromARGB(255, 255, 51, 0),
+                              color: Color.fromARGB(255, 255, 51, 0),
                               fontSize: 13),
-                          border: UnderlineInputBorder(),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors
+                                    .deepOrange), // Default color when not focused
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.deepOrange,
+                                width: 2.0), // Color when focused
+                          ),
                         ),
                       ),
                     ),

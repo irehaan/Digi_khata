@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'business_screen4.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:digi_khata/widgets/cards_widget.dart';
+import 'package:digi_khata/widgets/image_paths.dart';
 
 class BusinessScreen3 extends StatefulWidget {
   @override
@@ -15,29 +16,6 @@ class BusinessScreen3State extends State<BusinessScreen3> {
   bool _isOthersSelected = false;
 
   final List<String> cardTitles = List<String>.filled(12, " ");
-  final List<String> imagePaths = [
-    'assets/dg6.jpeg',
-    'assets/dg7.jpeg',
-    'assets/dg8.jpeg',
-    'assets/dg9.jpeg',
-    'assets/dg10.jpeg',
-    'assets/dg11.jpeg',
-    'assets/dg12.jpeg',
-    'assets/dg13.jpeg',
-    'assets/dg14.jpeg',
-    'assets/dg15.jpeg',
-    'assets/dg16.jpeg',
-    'assets/dg17.jpeg',
-  ];
-
-  final List<String> buttonTexts = [
-    'Retailer/shop',
-    'Wholesaler',
-    'Distributor',
-    'Manufacturer',
-    'Services',
-    'Others',
-  ];
 
   final List<String> buttonImages = [
     'assets/dg18.png',
@@ -48,6 +26,14 @@ class BusinessScreen3State extends State<BusinessScreen3> {
     'assets/dg23.png',
   ];
 
+  final List<String> buttonTexts = [
+    'Retailer/shop',
+    'Wholesaler',
+    'Distributor',
+    'Manufacturer',
+    'Services',
+    'Others',
+  ];
   Color _buttonColor = Color.fromARGB(255, 255, 91, 26);
 
   void _onNextPressed() {
@@ -156,14 +142,11 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                                   padding: EdgeInsets.all(14),
                                   elevation: 1,
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
-                                  side: BorderSide(
-                                    color: Color.fromARGB(255, 245, 58, 1),
-                                  ),
                                 ),
                                 child: Row(
                                   children: [
                                     Image.asset(
-                                      'assets/dg22.png',
+                                      buttonImages[4],
                                       width: 29,
                                       height: 200,
                                     ),
@@ -195,7 +178,7 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                                 child: Row(
                                   children: [
                                     Image.asset(
-                                      'assets/dg23.png',
+                                      buttonImages[5],
                                       width: 29,
                                       height: 100,
                                     ),
@@ -257,12 +240,19 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 16.0, vertical: 3),
                       child: TextField(
+                        cursorColor: Colors.deepOrange,
                         decoration: InputDecoration(
                           labelText: 'Enter business type',
                           labelStyle: TextStyle(
                               color: const Color.fromARGB(255, 255, 51, 0),
                               fontSize: 13),
-                          border: UnderlineInputBorder(),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.deepOrange),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.deepOrange, width: 2.0),
+                          ),
                         ),
                       ),
                     ),
