@@ -1,14 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'busineess_screen6.dart';
+import 'package:digi_khata/widgets/cards_widget.dart';
+import 'package:flutter_animated_button/flutter_animated_button.dart';
+import 'package:digi_khata/widgets/image_paths.dart';
 
-class BusinessScreen5 extends StatelessWidget {
-  final List<String> cardTitles = [
-    " ",
-    " ",
-    " ",
-    " ",
-    " ",
-  ];
+class BusinessScreen5 extends StatefulWidget {
+  @override
+  BusinessScreen5State createState() => BusinessScreen5State();
+}
+
+class BusinessScreen5State extends State<BusinessScreen5> {
+  // ignore: unused_field
+  double _buttonWidth = 200;
+  Color _buttonColor = Color.fromARGB(255, 255, 91, 26);
+
+  final List<String> cardTitles = List<String>.filled(12, " ");
+
+  void _onNextPressed() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => BusinessScreen6()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +34,13 @@ class BusinessScreen5 extends StatelessWidget {
             children: [
               Container(
                 width: double.infinity,
-                height: 150,
+                height: 120,
                 padding: EdgeInsets.all(40),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Color.fromARGB(255, 236, 106, 0),
-                      Color.fromARGB(255, 255, 52, 1)
+                      Color.fromARGB(255, 218, 98, 1),
+                      Color.fromARGB(255, 255, 38, 0),
                     ],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
@@ -46,76 +59,63 @@ class BusinessScreen5 extends StatelessWidget {
             ],
           ),
           Positioned(
-            top: 119,
+            top: 92,
             left: 0,
             right: 0,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 8),
-              padding: EdgeInsets.all(8),
+              margin: EdgeInsets.symmetric(horizontal: 5),
+              padding: EdgeInsets.all(5),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.elliptical(14, 9),
-                  topRight: Radius.elliptical(14, 9),
-                  bottomLeft: Radius.elliptical(14, 9),
-                  bottomRight: Radius.elliptical(14, 9),
-                ),
+                borderRadius: BorderRadius.circular(14),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 0),
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        height: 200,
-                        enlargeCenterPage: false,
-                        enableInfiniteScroll: false,
-                        autoPlay: false,
-                        viewportFraction: 0.89,
-                      ),
-                      items: cardTitles.asMap().entries.map((entry) {
-                        int index = entry.key;
-                        String title = entry.value;
-                        return Builder(
-                          builder: (BuildContext context) {
-                            return Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 1,
-                                margin: EdgeInsets.symmetric(horizontal: 0),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  image: DecorationImage(
-                                    image: AssetImage(index == 0
-                                        ? 'assets/dg6.jpeg'
-                                        : 'assets/dg6.jpeg'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    title,
-                                    style: TextStyle(
-                                      fontSize: 16.0,
-                                      color: Colors.white,
-                                      backgroundColor: Colors.black54,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
-                        );
-                      }).toList(),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                    child: CustomCardWidget(
+                      cardTitles: cardTitles,
+                      imagePaths: imagePaths,
                     ),
                   ),
                   SizedBox(height: 16),
-                  Text(
-                    'Owner Name',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Business Address',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 50,
+                        width: 160,
+                        child: TextButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 217, 233, 255),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.location_on,
+                                color: Color.fromARGB(255, 255, 71, 39),
+                              ),
+                              SizedBox(width: 2),
+                              Text(
+                                'Google Location',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 67, 126, 253),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(height: 8),
                   Padding(
@@ -123,14 +123,63 @@ class BusinessScreen5 extends StatelessWidget {
                     child: TextField(
                       cursorColor: Color.fromARGB(255, 255, 72, 0),
                       decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.person_2_outlined,
-                          color: const Color.fromARGB(255, 255, 72, 0),
-                          size: 40,
-                        ),
-                        hintText: 'Enter owner name',
+                        hintText: 'Shop/Building Number',
                         hintStyle: TextStyle(
-                            color: Color.fromARGB(255, 179, 179, 179),
+                            color: Color.fromARGB(255, 121, 121, 121),
+                            fontWeight: FontWeight.normal),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: const Color.fromARGB(255, 238, 238, 238),
+                            width: 1.0,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: const Color.fromARGB(255, 238, 238, 238),
+                            width: 1.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: TextField(
+                      cursorColor: Color.fromARGB(255, 255, 72, 0),
+                      decoration: InputDecoration(
+                        hintText: 'Area/Locality',
+                        hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 121, 121, 121),
+                            fontWeight: FontWeight.normal),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: const Color.fromARGB(255, 238, 238, 238),
+                            width: 1.0,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: const Color.fromARGB(255, 238, 238, 238),
+                            width: 1.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: TextField(
+                      cursorColor: Color.fromARGB(255, 255, 72, 0),
+                      decoration: InputDecoration(
+                        hintText: 'Islamabad',
+                        hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 121, 121, 121),
                             fontWeight: FontWeight.normal),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -158,30 +207,31 @@ class BusinessScreen5 extends StatelessWidget {
             right: 0,
             bottom: 16,
             child: Center(
-              child: Container(
-                width: 200,
+              child: AnimatedButton(
                 height: 50,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Colors.red, Color.fromARGB(255, 236, 106, 0)],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
-                  borderRadius: BorderRadius.circular(25),
+                width: 350,
+                text: 'NEXT',
+                isReverse: false,
+                selectedTextColor: const Color.fromARGB(255, 255, 255, 255),
+                selectedBackgroundColor: _buttonColor,
+                transitionType: TransitionType.LEFT_TO_RIGHT,
+                textStyle: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'NEXT',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                  ),
-                ),
+                backgroundColor: _buttonColor,
+                borderColor: Colors.white,
+                borderRadius: 50,
+                borderWidth: 2,
+                onPress: () {
+                  setState(() {
+                    _buttonColor = Color.fromARGB(255, 255, 72, 0);
+                    _buttonWidth = 300;
+                  });
+                  Future.delayed(Duration(milliseconds: 0), () {
+                    _onNextPressed();
+                  });
+                },
               ),
             ),
           ),
