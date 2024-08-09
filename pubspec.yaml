@@ -59,39 +59,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/dg1.png
-    - assets/dg2.png
-    - assets/dg3.png
-    - assets/dg5.png
-    - assets/dg6.jpeg
-    - assets/dg7.jpeg
-    - assets/dg8.jpeg
-    - assets/dg9.jpeg
-    - assets/dg10.jpeg
-    - assets/dg11.jpeg
-    - assets/dg12.jpeg
-    - assets/dg13.jpeg
-    - assets/dg14.jpeg
-    - assets/dg15.jpeg
-    - assets/dg16.jpeg
-    - assets/dg17.jpeg
-    - assets/dg18.png
-    - assets/dg19.png
-    - assets/dg20.png
-    - assets/dg21.png
-    - assets/dg22.png
-    - assets/dg23.png
-    - assets/dg24.png
-    - assets/dg25.png
-    - assets/dg26.png
-    - assets/dg27.png
-    - assets/dg28.png
-    - assets/dg29.png
-    - assets/dg30.png
-    - assets/dg31.png
-    - assets/dg32.png
-    - assets/dg33.png
-
+    - assets/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

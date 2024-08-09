@@ -127,6 +127,7 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                     'What is your Business Category?',
                     style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
                   ),
+                  // Remove vertical padding here
                   Padding(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
@@ -148,7 +149,7 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                                     borderRadius: BorderRadius.circular(40),
                                   ),
                                   padding: EdgeInsets.all(14),
-                                  elevation: 1,
+                                  elevation: 2,
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
                                 ),
                                 child: Row(
@@ -156,9 +157,9 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                                     Image.asset(
                                       'assets/dg22.png',
                                       width: 29,
-                                      height: 200,
+                                      height: 300,
                                     ),
-                                    SizedBox(width: 8),
+                                    SizedBox(width: 3),
                                     Text(
                                       'All Categories',
                                       style: TextStyle(
@@ -197,7 +198,8 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                                       style: TextStyle(
                                           fontSize: 14,
                                           color: const Color.fromARGB(
-                                              255, 0, 0, 0)),
+                                              255, 0, 0, 0),
+                                          fontWeight: FontWeight.normal),
                                     ),
                                   ],
                                 ),
@@ -213,12 +215,12 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(40),
                                   ),
-                                  padding: EdgeInsets.all(14),
-                                  elevation: 1,
+                                  padding: EdgeInsets.all(10),
+                                  elevation: 2,
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
                                   side: BorderSide(
                                     color: _selectedButtonIndex == index
-                                        ? Color.fromARGB(255, 245, 58, 1)
+                                        ? Color.fromARGB(255, 255, 60, 0)
                                         : Color.fromARGB(255, 249, 249, 249),
                                   ),
                                 ),
@@ -244,7 +246,6 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                             }),
                     ),
                   ),
-                  SizedBox(height: 0),
                   if (_isOthersSelected) ...[
                     Padding(
                       padding: const EdgeInsets.symmetric(
@@ -257,14 +258,11 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                               color: Color.fromARGB(255, 255, 51, 0),
                               fontSize: 13),
                           enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors
-                                    .deepOrange), // Default color when not focused
+                            borderSide: BorderSide(color: Colors.deepOrange),
                           ),
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                                color: Colors.deepOrange,
-                                width: 2.0), // Color when focused
+                                color: Colors.deepOrange, width: 2.0),
                           ),
                         ),
                       ),

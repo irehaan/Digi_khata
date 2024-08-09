@@ -77,7 +77,7 @@ class BusinessScreen2State extends State<BusinessScreen2> {
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                     child: CustomCardWidget(
                       cardTitles: cardTitles,
-                      imagePaths: imagePaths, // Use the imported imagePaths
+                      imagePaths: imagePaths,
                     ),
                   ),
                   SizedBox(height: 16),
