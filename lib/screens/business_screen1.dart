@@ -64,7 +64,7 @@ class BusinessScreen1State extends State<BusinessScreen1> {
             right: 0,
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 5),
-              padding: EdgeInsets.all(5),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 7),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(14),

@@ -78,7 +78,7 @@ class BusinessScreen4State extends State<BusinessScreen4> {
               Container(
                 width: double.infinity,
                 height: 120,
-                padding: EdgeInsets.all(40),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -106,8 +106,8 @@ class BusinessScreen4State extends State<BusinessScreen4> {
             left: 0,
             right: 0,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 5),
-              padding: EdgeInsets.all(5),
+              margin: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 7),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(14),
@@ -130,7 +130,7 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                   // Remove vertical padding here
                   Padding(
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
                     child: GridView.count(
                       shrinkWrap: true,
                       childAspectRatio: 3,

@@ -1,14 +1,25 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:digi_khata/widgets/image_paths.dart';
 import 'package:flutter/material.dart';
+import 'package:digi_khata/screens/business_screen7.dart';
+import 'package:digi_khata/widgets/cards_widget.dart';
 
-class BusinessScreen6 extends StatelessWidget {
-  final List<String> cardTitles = [
-    " ",
-    " ",
-    " ",
-    " ",
-    " ",
-  ];
+class BusinessScreen6 extends StatefulWidget {
+  @override
+  BusinessScreen6State createState() => BusinessScreen6State();
+}
+
+class BusinessScreen6State extends State<BusinessScreen6> {
+  double _buttonWidth = 200;
+  Color _buttonColor = Color.fromARGB(255, 255, 91, 26);
+
+  final List<String> cardTitles = List<String>.filled(12, " ");
+
+  void _onNextPressed() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => BusinessScreen7()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +32,13 @@ class BusinessScreen6 extends StatelessWidget {
             children: [
               Container(
                 width: double.infinity,
-                height: 150,
+                height: 120,
                 padding: EdgeInsets.all(40),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Color.fromARGB(255, 236, 106, 0),
-                      Color.fromARGB(255, 255, 52, 1)
+                      Color.fromARGB(255, 218, 98, 1),
+                      Color.fromARGB(255, 255, 38, 0),
                     ],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
@@ -46,107 +57,58 @@ class BusinessScreen6 extends StatelessWidget {
             ],
           ),
           Positioned(
-            top: 119,
+            top: 92,
             left: 0,
             right: 0,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 8),
-              padding: EdgeInsets.all(8),
+              margin: EdgeInsets.symmetric(horizontal: 5),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 7),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.elliptical(14, 9),
-                  topRight: Radius.elliptical(14, 9),
-                  bottomLeft: Radius.elliptical(14, 9),
-                  bottomRight: Radius.elliptical(14, 9),
-                ),
+                borderRadius: BorderRadius.circular(14),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 0),
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        height: 200,
-                        enlargeCenterPage: false,
-                        enableInfiniteScroll: false,
-                        autoPlay: false,
-                        viewportFraction: 0.89,
-                      ),
-                      items: cardTitles.asMap().entries.map((entry) {
-                        int index = entry.key;
-                        String title = entry.value;
-                        return Builder(
-                          builder: (BuildContext context) {
-                            return Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 1,
-                                margin: EdgeInsets.symmetric(horizontal: 0),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  image: DecorationImage(
-                                    image: AssetImage(index == 0
-                                        ? 'assets/dg6.jpeg'
-                                        : 'assets/dg6.jpeg'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    title,
-                                    style: TextStyle(
-                                      fontSize: 16.0,
-                                      color: Colors.white,
-                                      backgroundColor: Colors.black54,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
-                        );
-                      }).toList(),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                    child: CustomCardWidget(
+                      cardTitles: cardTitles,
+                      imagePaths: imagePaths,
                     ),
                   ),
                   SizedBox(height: 16),
-                  Text(
-                    'Owner Name',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 8),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: TextField(
-                      cursorColor: Color.fromARGB(255, 255, 72, 0),
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.person_2_outlined,
-                          color: const Color.fromARGB(255, 255, 72, 0),
-                          size: 40,
-                        ),
-                        hintText: 'Enter owner name',
-                        hintStyle: TextStyle(
-                            color: Color.fromARGB(255, 179, 179, 179),
-                            fontWeight: FontWeight.normal),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(
-                            color: const Color.fromARGB(255, 238, 238, 238),
-                            width: 1.0,
+                  Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Container(
+                          color: Colors.white,
+                          child: Image.asset(
+                            'assets/dg36.gif',
+                            height: 120,
+                            width: 120,
                           ),
                         ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(
-                            color: const Color.fromARGB(255, 238, 238, 238),
-                            width: 1.0,
+                        SizedBox(height: 12),
+                        Text(
+                          'Congratulations',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 255, 60, 0),
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                      ),
+                        SizedBox(height: 8),
+                        Text(
+                          'Business Card is ready to share',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -157,31 +119,56 @@ class BusinessScreen6 extends StatelessWidget {
             left: 0,
             right: 0,
             bottom: 16,
-            child: Center(
-              child: Container(
-                width: 200,
-                height: 50,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Colors.red, Color.fromARGB(255, 236, 106, 0)],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'NEXT',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Color.fromARGB(255, 255, 38, 0),
+                          Color.fromARGB(255, 218, 98, 1),
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      borderRadius: BorderRadius.circular(45),
+                    ),
+                    child: ElevatedButton.icon(
+                      onPressed: () {},
+                      icon:
+                          Image.asset('assets/dg34.png', height: 33, width: 30),
+                      label:
+                          Text("SHARE", style: TextStyle(color: Colors.white)),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                        padding:
+                            EdgeInsets.symmetric(vertical: 7, horizontal: 40),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(45),
+                        ),
+                        elevation: 0,
+                      ),
                     ),
                   ),
-                ),
+                  OutlinedButton(
+                    onPressed: _onNextPressed,
+                    child: Text("NO THANKS",
+                        style: TextStyle(
+                            color: const Color.fromARGB(255, 255, 81, 0))),
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide(color: Color.fromARGB(255, 255, 60, 0)),
+                      padding:
+                          EdgeInsets.symmetric(vertical: 14, horizontal: 40),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(45),
+                      ),
+                      backgroundColor: Colors.white,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

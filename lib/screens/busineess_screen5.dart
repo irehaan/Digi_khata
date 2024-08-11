@@ -64,7 +64,7 @@ class BusinessScreen5State extends State<BusinessScreen5> {
             right: 0,
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 5),
-              padding: EdgeInsets.all(5),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 7),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(14),
@@ -84,14 +84,18 @@ class BusinessScreen5State extends State<BusinessScreen5> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 2, vertical: 3),
+                      ),
                       Text(
                         'Business Address',
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
-                        height: 50,
-                        width: 160,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 1, vertical: 0),
                         child: TextButton(
                           onPressed: () {},
                           style: TextButton.styleFrom(

@@ -98,7 +98,7 @@ class BusinessScreen3State extends State<BusinessScreen3> {
             right: 0,
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 5),
-              padding: EdgeInsets.all(5),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 7),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(14),
@@ -169,7 +169,7 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                                     borderRadius: BorderRadius.circular(40),
                                   ),
                                   padding: EdgeInsets.all(14),
-                                  elevation: 1,
+                                  elevation: 2,
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
                                   side: BorderSide(
                                     color: Color.fromARGB(255, 245, 58, 1),
@@ -205,7 +205,7 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                                     borderRadius: BorderRadius.circular(40),
                                   ),
                                   padding: EdgeInsets.all(14),
-                                  elevation: 1,
+                                  elevation: 2,
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
                                   side: BorderSide(
                                     color: _selectedButtonIndex == index
