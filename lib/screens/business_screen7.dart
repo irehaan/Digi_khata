@@ -18,7 +18,7 @@ class BusinessScreen7State extends State<BusinessScreen7> {
             left: 0,
             right: 0,
             child: Container(
-              height: 30,
+              height: 29,
               color: Color.fromARGB(255, 255, 60, 0),
             ),
           ),

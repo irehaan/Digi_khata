@@ -33,6 +33,8 @@ dependencies:
   flutter_animated_button: ^2.0.3
   cupertino_icons: ^1.0.6
   flutter_emoji: ^2.2.0
+  animate_do: ^3.3.4
+  flutter_animate: ^4.0.0
 
 
 

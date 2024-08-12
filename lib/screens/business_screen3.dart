@@ -172,8 +172,8 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                                   elevation: 2,
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
                                   side: BorderSide(
-                                    color: Color.fromARGB(255, 245, 58, 1),
-                                  ),
+                                      color: Color.fromARGB(255, 245, 58, 1),
+                                      width: 2),
                                 ),
                                 child: Row(
                                   children: [
@@ -208,10 +208,10 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                                   elevation: 2,
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
                                   side: BorderSide(
-                                    color: _selectedButtonIndex == index
-                                        ? Color.fromARGB(255, 245, 58, 1)
-                                        : Color.fromARGB(255, 249, 249, 249),
-                                  ),
+                                      color: _selectedButtonIndex == index
+                                          ? Color.fromARGB(255, 245, 58, 1)
+                                          : Color.fromARGB(255, 255, 255, 255),
+                                      width: 2),
                                 ),
                                 child: Row(
                                   children: [
