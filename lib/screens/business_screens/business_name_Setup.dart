@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'business_screen2.dart';
-import 'package:digi_khata/widgets/cards_widget.dart';
+import 'business_type.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
+import 'package:digi_khata/widgets/cards_widget.dart';
 import 'package:digi_khata/widgets/image_paths.dart';
 
-class BusinessScreen1 extends StatefulWidget {
+class BusinessNameSetup extends StatefulWidget {
   @override
-  BusinessScreen1State createState() => BusinessScreen1State();
+  BusinessScreen2State createState() => BusinessScreen2State();
 }
 
-class BusinessScreen1State extends State<BusinessScreen1> {
+class BusinessScreen2State extends State<BusinessNameSetup> {
   // ignore: unused_field
   double _buttonWidth = 200;
   Color _buttonColor = Color.fromARGB(255, 255, 91, 26);
@@ -19,7 +19,7 @@ class BusinessScreen1State extends State<BusinessScreen1> {
   void _onNextPressed() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => BusinessScreen2()),
+      MaterialPageRoute(builder: (context) => BusinessType()),
     );
   }
 
@@ -82,21 +82,21 @@ class BusinessScreen1State extends State<BusinessScreen1> {
                   ),
                   SizedBox(height: 16),
                   Text(
-                    'Owner Name',
+                    'Business Name',
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 8),
+                  SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: TextField(
                       cursorColor: Color.fromARGB(255, 255, 72, 0),
                       decoration: InputDecoration(
                         prefixIcon: Icon(
-                          Icons.person_2_outlined,
+                          Icons.storefront_outlined,
                           color: const Color.fromARGB(255, 255, 72, 0),
-                          size: 40,
+                          size: 30,
                         ),
-                        hintText: 'Enter owner name',
+                        hintText: 'Enter your business name',
                         hintStyle: TextStyle(
                             color: Color.fromARGB(255, 179, 179, 179),
                             fontWeight: FontWeight.normal),

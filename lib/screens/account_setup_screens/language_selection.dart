@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:digi_khata/widgets/buttons.dart';
-import 'second_screen.dart';
+import 'mobile_number_setup.dart';
 
-class FirstScreen extends StatelessWidget {
+class LanguageSelection extends StatelessWidget {
   void _showLanguageSelector(BuildContext context) {
     showModalBottomSheet(
       context: context,

@@ -1,12 +1,12 @@
-import 'package:digi_khata/screens/third_screen.dart';
+import 'package:digi_khata/screens/main_app_screens/home.dart';
 import 'package:flutter/material.dart';
 
-class BusinessScreen7 extends StatefulWidget {
+class BusinessReady extends StatefulWidget {
   @override
   BusinessScreen7State createState() => BusinessScreen7State();
 }
 
-class BusinessScreen7State extends State<BusinessScreen7> {
+class BusinessScreen7State extends State<BusinessReady> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +77,7 @@ class BusinessScreen7State extends State<BusinessScreen7> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ThirdScreen()),
+                      MaterialPageRoute(builder: (context) => Home()),
                     );
                   },
                   child: Text(

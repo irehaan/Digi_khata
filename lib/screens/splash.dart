@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'first_screen.dart';
+import 'account_setup_screens/language_selection.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => FirstScreen()),
+        MaterialPageRoute(builder: (context) => LanguageSelection()),
       );
     });
   }

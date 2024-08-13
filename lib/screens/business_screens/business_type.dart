@@ -1,15 +1,15 @@
-import 'package:digi_khata/screens/busineess_screen5.dart';
 import 'package:flutter/material.dart';
-import 'package:digi_khata/widgets/cards_widget.dart';
+import 'business_category.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
+import 'package:digi_khata/widgets/cards_widget.dart';
 import 'package:digi_khata/widgets/image_paths.dart';
 
-class BusinessScreen4 extends StatefulWidget {
+class BusinessType extends StatefulWidget {
   @override
-  BusinessScreen4State createState() => BusinessScreen4State();
+  BusinessScreen3State createState() => BusinessScreen3State();
 }
 
-class BusinessScreen4State extends State<BusinessScreen4> {
+class BusinessScreen3State extends State<BusinessType> {
   // ignore: unused_field
   double _buttonWidth = 200;
   int? _selectedButtonIndex;
@@ -17,45 +17,36 @@ class BusinessScreen4State extends State<BusinessScreen4> {
 
   final List<String> cardTitles = List<String>.filled(12, " ");
 
+  final List<String> buttonImages = [
+    'assets/dg18.png',
+    'assets/dg19.png',
+    'assets/dg20.png',
+    'assets/dg21.png',
+    'assets/dg22.png',
+    'assets/dg23.png',
+  ];
+
   final List<String> buttonTexts = [
-    'Kirana/Grocery',
-    'Textile/Fashion',
-    'Medical',
-    'Electronics',
-    'Mobile',
-    'Automobile',
-    'Sports',
-    'Kids/Toys',
-    'Hardware/Tools',
+    'Retailer/shop',
+    'Wholesaler',
+    'Distributor',
+    'Manufacturer',
+    'Services',
     'Others',
   ];
-
-  final List<String> buttonImages = [
-    'assets/dg24.png',
-    'assets/dg25.png',
-    'assets/dg26.png',
-    'assets/dg27.png',
-    'assets/dg28.png',
-    'assets/dg29.png',
-    'assets/dg30.png',
-    'assets/dg31.png',
-    'assets/dg32.png',
-    'assets/dg33.png',
-  ];
-
   Color _buttonColor = Color.fromARGB(255, 255, 91, 26);
 
   void _onNextPressed() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => BusinessScreen5()),
+      MaterialPageRoute(builder: (context) => BusinessCategory()),
     );
   }
 
   void _onButtonPressed(int index) {
     setState(() {
       _selectedButtonIndex = index;
-      _isOthersSelected = index == 9;
+      _isOthersSelected = index == 5;
     });
   }
 
@@ -78,7 +69,7 @@ class BusinessScreen4State extends State<BusinessScreen4> {
               Container(
                 width: double.infinity,
                 height: 120,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding: EdgeInsets.all(40),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -106,7 +97,7 @@ class BusinessScreen4State extends State<BusinessScreen4> {
             left: 0,
             right: 0,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+              margin: EdgeInsets.symmetric(horizontal: 5),
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 7),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -123,14 +114,14 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                       imagePaths: imagePaths,
                     ),
                   ),
+                  SizedBox(height: 2),
                   Text(
-                    'What is your Business Category?',
-                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+                    'What is your Business Type?',
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                   ),
-                  // Remove vertical padding here
                   Padding(
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                        const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
                     child: GridView.count(
                       shrinkWrap: true,
                       childAspectRatio: 3,
@@ -149,24 +140,23 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                                     borderRadius: BorderRadius.circular(40),
                                   ),
                                   padding: EdgeInsets.all(14),
-                                  elevation: 2,
+                                  elevation: 1,
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
                                 ),
                                 child: Row(
                                   children: [
                                     Image.asset(
-                                      'assets/dg22.png',
+                                      buttonImages[4],
                                       width: 29,
-                                      height: 300,
+                                      height: 200,
                                     ),
-                                    SizedBox(width: 3),
+                                    SizedBox(width: 8),
                                     Text(
-                                      'All Categories',
+                                      'All',
                                       style: TextStyle(
                                           fontSize: 14,
                                           color: const Color.fromARGB(
-                                              255, 0, 0, 0),
-                                          fontWeight: FontWeight.normal),
+                                              255, 0, 0, 0)),
                                     ),
                                   ],
                                 ),
@@ -179,16 +169,16 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                                     borderRadius: BorderRadius.circular(40),
                                   ),
                                   padding: EdgeInsets.all(14),
-                                  elevation: 1,
+                                  elevation: 2,
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
                                   side: BorderSide(
-                                    color: Color.fromARGB(255, 245, 58, 1),
-                                  ),
+                                      color: Color.fromARGB(255, 245, 58, 1),
+                                      width: 2),
                                 ),
                                 child: Row(
                                   children: [
                                     Image.asset(
-                                      buttonImages[9],
+                                      buttonImages[5],
                                       width: 29,
                                       height: 100,
                                     ),
@@ -198,8 +188,7 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                                       style: TextStyle(
                                           fontSize: 14,
                                           color: const Color.fromARGB(
-                                              255, 0, 0, 0),
-                                          fontWeight: FontWeight.normal),
+                                              255, 0, 0, 0)),
                                     ),
                                   ],
                                 ),
@@ -215,14 +204,14 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(40),
                                   ),
-                                  padding: EdgeInsets.all(10),
+                                  padding: EdgeInsets.all(14),
                                   elevation: 2,
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
                                   side: BorderSide(
-                                    color: _selectedButtonIndex == index
-                                        ? Color.fromARGB(255, 255, 60, 0)
-                                        : Color.fromARGB(255, 249, 249, 249),
-                                  ),
+                                      color: _selectedButtonIndex == index
+                                          ? Color.fromARGB(255, 245, 58, 1)
+                                          : Color.fromARGB(255, 255, 255, 255),
+                                      width: 2),
                                 ),
                                 child: Row(
                                   children: [
@@ -235,10 +224,9 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                                     Text(
                                       buttonTexts[index],
                                       style: TextStyle(
-                                          fontSize: 13,
+                                          fontSize: 14,
                                           color: const Color.fromARGB(
-                                              255, 0, 0, 0),
-                                          fontWeight: FontWeight.normal),
+                                              255, 0, 0, 0)),
                                     ),
                                   ],
                                 ),
@@ -246,16 +234,17 @@ class BusinessScreen4State extends State<BusinessScreen4> {
                             }),
                     ),
                   ),
+                  SizedBox(height: 0),
                   if (_isOthersSelected) ...[
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 16.0, vertical: 3),
                       child: TextField(
-                        cursorColor: const Color.fromARGB(255, 255, 81, 0),
-                        decoration: const InputDecoration(
-                          labelText: 'Enter business category',
+                        cursorColor: Colors.deepOrange,
+                        decoration: InputDecoration(
+                          labelText: 'Enter business type',
                           labelStyle: TextStyle(
-                              color: Color.fromARGB(255, 255, 51, 0),
+                              color: const Color.fromARGB(255, 255, 51, 0),
                               fontSize: 13),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: Colors.deepOrange),

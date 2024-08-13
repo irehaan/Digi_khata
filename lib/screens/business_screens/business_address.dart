@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'business_screen3.dart';
-import 'package:flutter_animated_button/flutter_animated_button.dart';
+import 'share_business_card.dart';
 import 'package:digi_khata/widgets/cards_widget.dart';
+import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:digi_khata/widgets/image_paths.dart';
 
-class BusinessScreen2 extends StatefulWidget {
+class BusinessAddress extends StatefulWidget {
   @override
-  BusinessScreen2State createState() => BusinessScreen2State();
+  BusinessScreen5State createState() => BusinessScreen5State();
 }
 
-class BusinessScreen2State extends State<BusinessScreen2> {
+class BusinessScreen5State extends State<BusinessAddress> {
   // ignore: unused_field
   double _buttonWidth = 200;
   Color _buttonColor = Color.fromARGB(255, 255, 91, 26);
@@ -19,7 +19,7 @@ class BusinessScreen2State extends State<BusinessScreen2> {
   void _onNextPressed() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => BusinessScreen3()),
+      MaterialPageRoute(builder: (context) => ShareBusinessCard()),
     );
   }
 
@@ -81,24 +81,109 @@ class BusinessScreen2State extends State<BusinessScreen2> {
                     ),
                   ),
                   SizedBox(height: 16),
-                  Text(
-                    'Business Name',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 2, vertical: 3),
+                      ),
+                      Text(
+                        'Business Address',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 1, vertical: 0),
+                        child: TextButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 217, 233, 255),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.location_on,
+                                color: Color.fromARGB(255, 255, 71, 39),
+                              ),
+                              SizedBox(width: 2),
+                              Text(
+                                'Google Location',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 67, 126, 253),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 8),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: TextField(
                       cursorColor: Color.fromARGB(255, 255, 72, 0),
                       decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.storefront_outlined,
-                          color: const Color.fromARGB(255, 255, 72, 0),
-                          size: 30,
-                        ),
-                        hintText: 'Enter your business name',
+                        hintText: 'Shop/Building Number',
                         hintStyle: TextStyle(
-                            color: Color.fromARGB(255, 179, 179, 179),
+                            color: Color.fromARGB(255, 121, 121, 121),
+                            fontWeight: FontWeight.normal),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: const Color.fromARGB(255, 238, 238, 238),
+                            width: 1.0,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: const Color.fromARGB(255, 238, 238, 238),
+                            width: 1.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: TextField(
+                      cursorColor: Color.fromARGB(255, 255, 72, 0),
+                      decoration: InputDecoration(
+                        hintText: 'Area/Locality',
+                        hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 121, 121, 121),
+                            fontWeight: FontWeight.normal),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: const Color.fromARGB(255, 238, 238, 238),
+                            width: 1.0,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: const Color.fromARGB(255, 238, 238, 238),
+                            width: 1.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: TextField(
+                      cursorColor: Color.fromARGB(255, 255, 72, 0),
+                      decoration: InputDecoration(
+                        hintText: 'Islamabad',
+                        hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 121, 121, 121),
                             fontWeight: FontWeight.normal),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'business_screen1.dart';
+import '../business_screens/owner_name_setup.dart';
 
 class MobileNumberScreen extends StatefulWidget {
   @override
@@ -131,7 +131,7 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => BusinessScreen1()),
+                              builder: (context) => OwnerNameSetup()),
                         );
                       }
                     : null,

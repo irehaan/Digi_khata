@@ -1,23 +1,20 @@
 import 'package:digi_khata/widgets/image_paths.dart';
 import 'package:flutter/material.dart';
-import 'package:digi_khata/screens/business_screen7.dart';
+import 'package:digi_khata/screens/business_screens/business_ready.dart';
 import 'package:digi_khata/widgets/cards_widget.dart';
 
-class BusinessScreen6 extends StatefulWidget {
+class ShareBusinessCard extends StatefulWidget {
   @override
   BusinessScreen6State createState() => BusinessScreen6State();
 }
 
-class BusinessScreen6State extends State<BusinessScreen6> {
-  double _buttonWidth = 200;
-  Color _buttonColor = Color.fromARGB(255, 255, 91, 26);
-
+class BusinessScreen6State extends State<ShareBusinessCard> {
   final List<String> cardTitles = List<String>.filled(12, " ");
 
   void _onNextPressed() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => BusinessScreen7()),
+      MaterialPageRoute(builder: (context) => BusinessReady()),
     );
   }
 

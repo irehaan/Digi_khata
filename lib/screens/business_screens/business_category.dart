@@ -1,15 +1,15 @@
+import 'package:digi_khata/screens/business_screens/business_address.dart';
 import 'package:flutter/material.dart';
-import 'business_screen4.dart';
-import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:digi_khata/widgets/cards_widget.dart';
+import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:digi_khata/widgets/image_paths.dart';
 
-class BusinessScreen3 extends StatefulWidget {
+class BusinessCategory extends StatefulWidget {
   @override
-  BusinessScreen3State createState() => BusinessScreen3State();
+  BusinessScreen4State createState() => BusinessScreen4State();
 }
 
-class BusinessScreen3State extends State<BusinessScreen3> {
+class BusinessScreen4State extends State<BusinessCategory> {
   // ignore: unused_field
   double _buttonWidth = 200;
   int? _selectedButtonIndex;
@@ -17,36 +17,45 @@ class BusinessScreen3State extends State<BusinessScreen3> {
 
   final List<String> cardTitles = List<String>.filled(12, " ");
 
-  final List<String> buttonImages = [
-    'assets/dg18.png',
-    'assets/dg19.png',
-    'assets/dg20.png',
-    'assets/dg21.png',
-    'assets/dg22.png',
-    'assets/dg23.png',
-  ];
-
   final List<String> buttonTexts = [
-    'Retailer/shop',
-    'Wholesaler',
-    'Distributor',
-    'Manufacturer',
-    'Services',
+    'Kirana/Grocery',
+    'Textile/Fashion',
+    'Medical',
+    'Electronics',
+    'Mobile',
+    'Automobile',
+    'Sports',
+    'Kids/Toys',
+    'Hardware/Tools',
     'Others',
   ];
+
+  final List<String> buttonImages = [
+    'assets/dg24.png',
+    'assets/dg25.png',
+    'assets/dg26.png',
+    'assets/dg27.png',
+    'assets/dg28.png',
+    'assets/dg29.png',
+    'assets/dg30.png',
+    'assets/dg31.png',
+    'assets/dg32.png',
+    'assets/dg33.png',
+  ];
+
   Color _buttonColor = Color.fromARGB(255, 255, 91, 26);
 
   void _onNextPressed() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => BusinessScreen4()),
+      MaterialPageRoute(builder: (context) => BusinessAddress()),
     );
   }
 
   void _onButtonPressed(int index) {
     setState(() {
       _selectedButtonIndex = index;
-      _isOthersSelected = index == 5;
+      _isOthersSelected = index == 9;
     });
   }
 
@@ -69,7 +78,7 @@ class BusinessScreen3State extends State<BusinessScreen3> {
               Container(
                 width: double.infinity,
                 height: 120,
-                padding: EdgeInsets.all(40),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -97,7 +106,7 @@ class BusinessScreen3State extends State<BusinessScreen3> {
             left: 0,
             right: 0,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 5),
+              margin: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 7),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -114,14 +123,13 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                       imagePaths: imagePaths,
                     ),
                   ),
-                  SizedBox(height: 2),
                   Text(
-                    'What is your Business Type?',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    'What is your Business Category?',
+                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
                     child: GridView.count(
                       shrinkWrap: true,
                       childAspectRatio: 3,
@@ -140,23 +148,24 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                                     borderRadius: BorderRadius.circular(40),
                                   ),
                                   padding: EdgeInsets.all(14),
-                                  elevation: 1,
+                                  elevation: 2,
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
                                 ),
                                 child: Row(
                                   children: [
                                     Image.asset(
-                                      buttonImages[4],
+                                      'assets/dg22.png',
                                       width: 29,
-                                      height: 200,
+                                      height: 300,
                                     ),
-                                    SizedBox(width: 8),
+                                    SizedBox(width: 3),
                                     Text(
-                                      'All',
+                                      'All Categories',
                                       style: TextStyle(
                                           fontSize: 14,
                                           color: const Color.fromARGB(
-                                              255, 0, 0, 0)),
+                                              255, 0, 0, 0),
+                                          fontWeight: FontWeight.normal),
                                     ),
                                   ],
                                 ),
@@ -169,16 +178,16 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                                     borderRadius: BorderRadius.circular(40),
                                   ),
                                   padding: EdgeInsets.all(14),
-                                  elevation: 2,
+                                  elevation: 1,
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
                                   side: BorderSide(
-                                      color: Color.fromARGB(255, 245, 58, 1),
-                                      width: 2),
+                                    color: Color.fromARGB(255, 245, 58, 1),
+                                  ),
                                 ),
                                 child: Row(
                                   children: [
                                     Image.asset(
-                                      buttonImages[5],
+                                      buttonImages[9],
                                       width: 29,
                                       height: 100,
                                     ),
@@ -188,7 +197,8 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                                       style: TextStyle(
                                           fontSize: 14,
                                           color: const Color.fromARGB(
-                                              255, 0, 0, 0)),
+                                              255, 0, 0, 0),
+                                          fontWeight: FontWeight.normal),
                                     ),
                                   ],
                                 ),
@@ -204,14 +214,14 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(40),
                                   ),
-                                  padding: EdgeInsets.all(14),
+                                  padding: EdgeInsets.all(10),
                                   elevation: 2,
                                   shadowColor: Color.fromARGB(255, 0, 0, 0),
                                   side: BorderSide(
-                                      color: _selectedButtonIndex == index
-                                          ? Color.fromARGB(255, 245, 58, 1)
-                                          : Color.fromARGB(255, 255, 255, 255),
-                                      width: 2),
+                                    color: _selectedButtonIndex == index
+                                        ? Color.fromARGB(255, 255, 60, 0)
+                                        : Color.fromARGB(255, 249, 249, 249),
+                                  ),
                                 ),
                                 child: Row(
                                   children: [
@@ -224,9 +234,10 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                                     Text(
                                       buttonTexts[index],
                                       style: TextStyle(
-                                          fontSize: 14,
+                                          fontSize: 13,
                                           color: const Color.fromARGB(
-                                              255, 0, 0, 0)),
+                                              255, 0, 0, 0),
+                                          fontWeight: FontWeight.normal),
                                     ),
                                   ],
                                 ),
@@ -234,17 +245,16 @@ class BusinessScreen3State extends State<BusinessScreen3> {
                             }),
                     ),
                   ),
-                  SizedBox(height: 0),
                   if (_isOthersSelected) ...[
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 16.0, vertical: 3),
                       child: TextField(
-                        cursorColor: Colors.deepOrange,
-                        decoration: InputDecoration(
-                          labelText: 'Enter business type',
+                        cursorColor: const Color.fromARGB(255, 255, 81, 0),
+                        decoration: const InputDecoration(
+                          labelText: 'Enter business category',
                           labelStyle: TextStyle(
-                              color: const Color.fromARGB(255, 255, 51, 0),
+                              color: Color.fromARGB(255, 255, 51, 0),
                               fontSize: 13),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: Colors.deepOrange),
