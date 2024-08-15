@@ -2,16 +2,14 @@ import 'package:flutter/material.dart';
 import 'business_category.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:digi_khata/widgets/cards_widget.dart';
-import 'package:digi_khata/widgets/image_paths.dart';
+import 'package:digi_khata/screens/image_paths.dart';
 
 class BusinessType extends StatefulWidget {
   @override
-  BusinessScreen3State createState() => BusinessScreen3State();
+  BusinessTypeState createState() => BusinessTypeState();
 }
 
-class BusinessScreen3State extends State<BusinessType> {
-  // ignore: unused_field
-  double _buttonWidth = 200;
+class BusinessTypeState extends State<BusinessType> {
   int? _selectedButtonIndex;
   bool _isOthersSelected = false;
 
@@ -285,7 +283,6 @@ class BusinessScreen3State extends State<BusinessType> {
                 onPress: () {
                   setState(() {
                     _buttonColor = Color.fromARGB(255, 255, 72, 0);
-                    _buttonWidth = 300;
                   });
                   Future.delayed(Duration(milliseconds: 0), () {
                     _onNextPressed();

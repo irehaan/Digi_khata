@@ -2,14 +2,14 @@ import 'package:digi_khata/screens/business_screens/business_address.dart';
 import 'package:flutter/material.dart';
 import 'package:digi_khata/widgets/cards_widget.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
-import 'package:digi_khata/widgets/image_paths.dart';
+import 'package:digi_khata/screens/image_paths.dart';
 
 class BusinessCategory extends StatefulWidget {
   @override
-  BusinessScreen4State createState() => BusinessScreen4State();
+  BusinessCategoryState createState() => BusinessCategoryState();
 }
 
-class BusinessScreen4State extends State<BusinessCategory> {
+class BusinessCategoryState extends State<BusinessCategory> {
   // ignore: unused_field
   double _buttonWidth = 200;
   int? _selectedButtonIndex;

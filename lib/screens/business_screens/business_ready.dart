@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 class BusinessReady extends StatefulWidget {
   @override
-  BusinessScreen7State createState() => BusinessScreen7State();
+  BusinessReadyState createState() => BusinessReadyState();
 }
 
-class BusinessScreen7State extends State<BusinessReady> {
+class BusinessReadyState extends State<BusinessReady> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

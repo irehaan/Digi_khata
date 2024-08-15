@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'business_name_Setup.dart';
 import 'package:digi_khata/widgets/cards_widget.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
-import 'package:digi_khata/widgets/image_paths.dart';
+import 'package:digi_khata/screens/image_paths.dart';
 
 class OwnerNameSetup extends StatefulWidget {
   @override
-  BusinessScreen1State createState() => BusinessScreen1State();
+  OwnerNameState createState() => OwnerNameState();
 }
 
-class BusinessScreen1State extends State<OwnerNameSetup> {
+class OwnerNameState extends State<OwnerNameSetup> {
   Color _buttonColor = Color.fromARGB(255, 255, 91, 26);
 
   final List<String> cardTitles = List<String>.filled(12, " ");

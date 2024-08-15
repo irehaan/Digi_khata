@@ -1,14 +1,14 @@
-import 'package:digi_khata/widgets/image_paths.dart';
+import 'package:digi_khata/screens/image_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:digi_khata/screens/business_screens/business_ready.dart';
 import 'package:digi_khata/widgets/cards_widget.dart';
 
 class ShareBusinessCard extends StatefulWidget {
   @override
-  BusinessScreen6State createState() => BusinessScreen6State();
+  CardShareState createState() => CardShareState();
 }
 
-class BusinessScreen6State extends State<ShareBusinessCard> {
+class CardShareState extends State<ShareBusinessCard> {
   final List<String> cardTitles = List<String>.filled(12, " ");
 
   void _onNextPressed() {

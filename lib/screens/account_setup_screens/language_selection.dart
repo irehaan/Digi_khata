@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:digi_khata/widgets/buttons.dart';
+import 'package:digi_khata/widgets/buttons/buttons.dart';
 import 'mobile_number_setup.dart';
 
 class LanguageSelection extends StatelessWidget {

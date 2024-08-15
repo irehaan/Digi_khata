@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'business_type.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:digi_khata/widgets/cards_widget.dart';
-import 'package:digi_khata/widgets/image_paths.dart';
+import 'package:digi_khata/screens/image_paths.dart';
 
 class BusinessNameSetup extends StatefulWidget {
   @override
-  BusinessScreen2State createState() => BusinessScreen2State();
+  BusinessNameState createState() => BusinessNameState();
 }
 
-class BusinessScreen2State extends State<BusinessNameSetup> {
+class BusinessNameState extends State<BusinessNameSetup> {
   // ignore: unused_field
   double _buttonWidth = 200;
   Color _buttonColor = Color.fromARGB(255, 255, 91, 26);
