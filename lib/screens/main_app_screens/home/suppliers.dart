@@ -1,7 +1,14 @@
+import 'package:digi_khata/screens/main_app_screens/home/customers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:digi_khata/screens/main_app_screens/home/banks.dart';
 
-class Home extends StatelessWidget {
+class Suppliers extends StatefulWidget {
+  @override
+  _SuppliersState createState() => _SuppliersState();
+}
+
+class _SuppliersState extends State<Suppliers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,7 +96,28 @@ class Home extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              PageRouteBuilder(
+                                pageBuilder:
+                                    (context, animation, secondaryAnimation) =>
+                                        Customers(),
+                                transitionsBuilder: (context, animation,
+                                    secondaryAnimation, child) {
+                                  const begin = Offset(-1.0, 0.0);
+                                  const end = Offset.zero;
+                                  const curve = Curves.easeInOut;
+
+                                  var tween = Tween(begin: begin, end: end)
+                                      .chain(CurveTween(curve: curve));
+                                  var offsetAnimation = animation.drive(tween);
+
+                                  return SlideTransition(
+                                      position: offsetAnimation, child: child);
+                                },
+                              ),
+                            );
+                          },
                           child: const Text(
                             'Customers',
                             style: TextStyle(
@@ -109,7 +137,28 @@ class Home extends StatelessWidget {
                           ),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              PageRouteBuilder(
+                                pageBuilder:
+                                    (context, animation, secondaryAnimation) =>
+                                        bank(),
+                                transitionsBuilder: (context, animation,
+                                    secondaryAnimation, child) {
+                                  const begin = Offset(1.0, 0.0);
+                                  const end = Offset.zero;
+                                  const curve = Curves.easeInOut;
+
+                                  var tween = Tween(begin: begin, end: end)
+                                      .chain(CurveTween(curve: curve));
+                                  var offsetAnimation = animation.drive(tween);
+
+                                  return SlideTransition(
+                                      position: offsetAnimation, child: child);
+                                },
+                              ),
+                            );
+                          },
                           child: const Text(
                             'Banks',
                             style: TextStyle(
@@ -147,12 +196,12 @@ class Home extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Image.asset(
-                        'assets/dg40.png',
+                        'assets/home_img/suppliers/suppliers.png',
                         height: 200,
                       ),
                       SizedBox(height: 20),
                       const Text(
-                        '1-Add customers',
+                        '1- Add suppliers',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
@@ -161,7 +210,7 @@ class Home extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       const Text(
-                        '2-Add entries & maintain khata',
+                        '2- Add entries & maintain khata',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
@@ -170,7 +219,7 @@ class Home extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       const Text(
-                        '3-Send payment reminders',
+                        '3- Manage your purchases',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
@@ -236,7 +285,7 @@ class Home extends StatelessWidget {
                     ),
                     SizedBox(height: 4),
                     Padding(
-                      padding: EdgeInsets.only(top: 1, left: 50),
+                      padding: EdgeInsets.only(top: 1, left: 0),
                       child: Row(
                         children: [
                           Container(
@@ -255,7 +304,7 @@ class Home extends StatelessWidget {
                                       ),
                                     ),
                                     Text(
-                                      'You will give',
+                                      'Total purchase for Aug',
                                       style: TextStyle(
                                         fontSize: 11,
                                         fontWeight: FontWeight.bold,
@@ -286,11 +335,11 @@ class Home extends StatelessWidget {
                                       style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold,
-                                        color: Color.fromARGB(255, 209, 0, 0),
+                                        color: Color.fromARGB(255, 0, 170, 23),
                                       ),
                                     ),
                                     Text(
-                                      'You will give',
+                                      "You'll give",
                                       style: TextStyle(
                                         fontSize: 11,
                                         fontWeight: FontWeight.bold,
@@ -344,11 +393,11 @@ class Home extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: List.generate(5, (index) {
                   final List<String> imagePaths = [
-                    'assets/home_img/hm1.png',
-                    'assets/home_img/hm2.png',
-                    'assets/home_img/hm3.png',
-                    'assets/home_img/hm4.png',
-                    'assets/home_img/hm5.png',
+                    'assets/home_img/customers/hm1.png',
+                    'assets/home_img/customers/hm2.png',
+                    'assets/home_img/customers/hm3.png',
+                    'assets/home_img/customers/hm4.png',
+                    'assets/home_img/customers/hm5.png',
                   ];
 
                   final List<String> buttonTexts = [
@@ -399,7 +448,7 @@ class Home extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 84,
+            bottom: 75,
             right: 20,
             child: Row(
               children: [
@@ -429,8 +478,8 @@ class Home extends StatelessWidget {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color.fromARGB(255, 255, 54, 19),
-                        Color.fromARGB(255, 218, 98, 1),
+                        Color.fromARGB(255, 0, 122, 7),
+                        Color.fromARGB(255, 27, 165, 0),
                       ],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
@@ -442,7 +491,7 @@ class Home extends StatelessWidget {
                     icon: const Icon(Icons.person_add_alt_1_outlined,
                         color: Colors.white),
                     label: const Text(
-                      "ADD CUSTOMER",
+                      "ADD SUPPLIER",
                       style: TextStyle(color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(

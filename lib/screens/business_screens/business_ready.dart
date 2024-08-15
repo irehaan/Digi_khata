@@ -1,4 +1,4 @@
-import 'package:digi_khata/screens/main_app_screens/home.dart';
+import 'package:digi_khata/screens/main_app_screens/home/customers.dart';
 import 'package:flutter/material.dart';
 
 class BusinessReady extends StatefulWidget {
@@ -77,7 +77,7 @@ class BusinessReadyState extends State<BusinessReady> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Home()),
+                      MaterialPageRoute(builder: (context) => Customers()),
                     );
                   },
                   child: Text(
