@@ -1,10 +1,15 @@
-import 'package:digi_khata/screens/main_app_screens/home/all.dart';
 import 'package:digi_khata/screens/main_app_screens/home/customers.dart';
-import 'package:digi_khata/screens/main_app_screens/home/suppliers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:digi_khata/screens/main_app_screens/home/suppliers.dart';
+import 'package:digi_khata/screens/main_app_screens/home/banks.dart';
 
-class bank extends StatelessWidget {
+class All extends StatefulWidget {
+  @override
+  _AllState createState() => _AllState();
+}
+
+class _AllState extends State<All> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +31,7 @@ class bank extends StatelessWidget {
                 height: 130,
                 padding:
                     EdgeInsets.only(left: 20, right: 20, top: 2, bottom: 20),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
                       Color.fromARGB(255, 218, 98, 0),
@@ -42,7 +47,7 @@ class bank extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
+                        const Row(
                           children: [
                             Text(
                               'atomcamp',
@@ -154,25 +159,15 @@ class bank extends StatelessWidget {
                           ),
                         ),
                         TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Banks',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 216, 216, 216),
-                              fontSize: 14,
-                            ),
-                          ),
-                        ),
-                        TextButton(
                           onPressed: () {
                             Navigator.of(context).push(
                               PageRouteBuilder(
                                 pageBuilder:
                                     (context, animation, secondaryAnimation) =>
-                                        All(),
+                                        bank(),
                                 transitionsBuilder: (context, animation,
                                     secondaryAnimation, child) {
-                                  const begin = Offset(1.0, 0.0);
+                                  const begin = Offset(-1.0, 0.0);
                                   const end = Offset.zero;
                                   const curve = Curves.easeInOut;
 
@@ -186,6 +181,16 @@ class bank extends StatelessWidget {
                               ),
                             );
                           },
+                          child: const Text(
+                            'Banks',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 216, 216, 216),
+                              fontSize: 14,
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {},
                           child: const Text(
                             'All',
                             style: TextStyle(
@@ -213,12 +218,12 @@ class bank extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Image.asset(
-                        'assets/home_img/banks/banks.png',
+                        'assets/home_img/all/all.png',
                         height: 200,
                       ),
                       SizedBox(height: 20),
                       const Text(
-                        '1- Add banks',
+                        '1- Add customers',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
@@ -236,7 +241,7 @@ class bank extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       const Text(
-                        '3- Manage your bank balance',
+                        '3- Send payment reminders',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
@@ -302,7 +307,7 @@ class bank extends StatelessWidget {
                     ),
                     SizedBox(height: 4),
                     Padding(
-                      padding: EdgeInsets.only(top: 1, left: 0),
+                      padding: EdgeInsets.only(top: 1, left: 50),
                       child: Row(
                         children: [
                           Container(
@@ -321,7 +326,7 @@ class bank extends StatelessWidget {
                                       ),
                                     ),
                                     Text(
-                                      'Total in for Aug',
+                                      'You will give',
                                       style: TextStyle(
                                         fontSize: 11,
                                         fontWeight: FontWeight.bold,
@@ -352,11 +357,11 @@ class bank extends StatelessWidget {
                                       style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold,
-                                        color: Color.fromARGB(255, 0, 170, 23),
+                                        color: Color.fromARGB(255, 209, 0, 0),
                                       ),
                                     ),
                                     Text(
-                                      "Bank Balance",
+                                      'You will give',
                                       style: TextStyle(
                                         fontSize: 11,
                                         fontWeight: FontWeight.bold,
@@ -379,7 +384,7 @@ class bank extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: 30),
+                                SizedBox(width: 10),
                                 IconButton(
                                   icon: const Icon(
                                     Icons.keyboard_arrow_right_sharp,
@@ -508,7 +513,7 @@ class bank extends StatelessWidget {
                     icon: const Icon(Icons.person_add_alt_1_outlined,
                         color: Colors.white),
                     label: const Text(
-                      "ADD BANK",
+                      "ADD CUSTOMER",
                       style: TextStyle(color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(

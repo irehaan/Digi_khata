@@ -1,9 +1,14 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:digi_khata/widgets/buttons/buttons.dart';
+import 'package:digi_khata/widgets/language_grid.dart';
+import 'package:digi_khata/widgets/language_screen_header.dart';
+import 'package:digi_khata/widgets/custom_appbar.dart';
 import 'mobile_number_setup.dart';
 
 class LanguageSelection extends StatelessWidget {
+  const LanguageSelection({super.key});
+
   void _showLanguageSelector(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -21,13 +26,13 @@ class LanguageSelection extends StatelessWidget {
                 },
                 child: Container(
                   color: Colors.transparent,
-                  height: MediaQuery.of(context).size.height * 0.4,
+                  height: MediaQuery.of(context).size.height * 0.1,
                 ),
               ),
               Container(
                 width: double.infinity,
                 height: 400,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 247, 244, 244),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(15),
@@ -38,7 +43,7 @@ class LanguageSelection extends StatelessWidget {
                   children: [
                     Container(
                       width: double.infinity,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(15),
@@ -46,7 +51,7 @@ class LanguageSelection extends StatelessWidget {
                         ),
                       ),
                       padding: EdgeInsets.all(33),
-                      child: Column(
+                      child: const Column(
                         children: [
                           Text(
                             'Select your language',
@@ -60,25 +65,7 @@ class LanguageSelection extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 30),
-                    GridView.count(
-                      crossAxisCount: 3,
-                      shrinkWrap: true,
-                      mainAxisSpacing: 8,
-                      crossAxisSpacing: 13,
-                      childAspectRatio: 1.8,
-                      padding: EdgeInsets.symmetric(horizontal: 14),
-                      children: [
-                        LanguageButton('English'),
-                        LanguageButton('Roman Urdu'),
-                        LanguageButton('اردو'),
-                        LanguageButton('سندھی'),
-                        LanguageButton('پشتو'),
-                        LanguageButton('فارسی'),
-                        LanguageButton('العربية'),
-                        LanguageButton('বাংলা'),
-                        LanguageButton('हिंदी'),
-                      ],
-                    ),
+                    LanguageGrid(),
                     SizedBox(height: 20),
                     Text.rich(
                       TextSpan(
@@ -87,28 +74,22 @@ class LanguageSelection extends StatelessWidget {
                         children: [
                           TextSpan(
                             text: 'Privacy Policy',
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color.fromARGB(255, 255, 104, 17),
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                             ),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                // Handle Privacy Policy tap
-                              },
+                            recognizer: TapGestureRecognizer()..onTap = () {},
                           ),
                           TextSpan(text: ' and '),
                           TextSpan(
                             text: 'T&C',
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color.fromARGB(255, 255, 104, 17),
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                             ),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                // Handle T&C tap
-                              },
+                            recognizer: TapGestureRecognizer()..onTap = () {},
                           ),
                         ],
                       ),
@@ -128,83 +109,11 @@ class LanguageSelection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(),
       body: Column(
         children: [
-          SizedBox(height: 27),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color.fromARGB(255, 236, 106, 0), // Dark orange
-                  Color.fromARGB(255, 221, 33, 0), // Light orange
-                ],
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Image.asset(
-                      'assets/dg1.png',
-                      width: 40,
-                      height: 40,
-                      color: Colors.white,
-                    ),
-                    SizedBox(width: 8),
-                    Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                            text: 'Digi',
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          TextSpan(
-                            text: 'Khata',
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.normal,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'English',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      IconButton(
-                        icon: Icon(
-                          Icons.keyboard_arrow_down_sharp,
-                          color: Colors.white,
-                          size: 25,
-                        ),
-                        onPressed: () => _showLanguageSelector(context),
-                      ),
-                      SizedBox(width: 0),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+          Header(
+            onLanguagePressed: (context) => _showLanguageSelector(context),
           ),
           Expanded(
             child: Center(
@@ -215,8 +124,8 @@ class LanguageSelection extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
             child: Text(
               'Manage your business: Send \nReminders and receive payments!',
               textAlign: TextAlign.center,
@@ -228,7 +137,7 @@ class LanguageSelection extends StatelessWidget {
             ),
           ),
           SizedBox(height: 50),
-          Divider(
+          const Divider(
             color: Color.fromARGB(255, 0, 0, 0),
             thickness: 0.5,
           ),
@@ -244,7 +153,7 @@ class LanguageSelection extends StatelessWidget {
                   height: 80,
                 ),
                 SizedBox(width: 8),
-                Expanded(
+                const Expanded(
                   child: Text(
                     'Trusted by 50 lakh+ Businesses \nacross Pakistan',
                     style: TextStyle(
@@ -267,42 +176,6 @@ class LanguageSelection extends StatelessWidget {
           ),
           SizedBox(height: 10),
         ],
-      ),
-    );
-  }
-}
-
-class LanguageButton extends StatelessWidget {
-  final String text;
-
-  LanguageButton(this.text);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 50, // Set height for all buttons
-      child: TextButton(
-        onPressed: () {
-          // Handle language selection
-          Navigator.pop(context);
-        },
-        style: TextButton.styleFrom(
-          backgroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-            side: BorderSide(
-              color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.8),
-              width: 1,
-            ),
-          ),
-        ),
-        child: Text(
-          text,
-          style: TextStyle(
-            fontSize: 16,
-            color: Colors.black,
-          ),
-        ),
       ),
     );
   }

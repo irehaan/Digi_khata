@@ -17,16 +17,12 @@ class LanguageButton extends StatelessWidget {
           backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
-            side: BorderSide(
-              color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.8),
-              width: 1,
-            ),
           ),
         ),
         child: Text(
           text,
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 15,
             color: Colors.black,
           ),
         ),

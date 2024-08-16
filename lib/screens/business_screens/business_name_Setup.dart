@@ -10,8 +10,6 @@ class BusinessNameSetup extends StatefulWidget {
 }
 
 class BusinessNameState extends State<BusinessNameSetup> {
-  // ignore: unused_field
-  double _buttonWidth = 200;
   Color _buttonColor = Color.fromARGB(255, 255, 91, 26);
 
   final List<String> cardTitles = List<String>.filled(12, " ");
@@ -26,6 +24,13 @@ class BusinessNameState extends State<BusinessNameSetup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(0),
+        child: AppBar(
+          backgroundColor: Color.fromARGB(255, 189, 28, 0),
+          elevation: 0,
+        ),
+      ),
       backgroundColor: Color.fromARGB(255, 247, 247, 247),
       body: Stack(
         children: [
@@ -145,7 +150,6 @@ class BusinessNameState extends State<BusinessNameSetup> {
                 onPress: () {
                   setState(() {
                     _buttonColor = Color.fromARGB(255, 255, 72, 0);
-                    _buttonWidth = 300;
                   });
                   Future.delayed(Duration(milliseconds: 0), () {
                     _onNextPressed();

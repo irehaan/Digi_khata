@@ -69,6 +69,13 @@ class BusinessCategoryState extends State<BusinessCategory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(0),
+        child: AppBar(
+          backgroundColor: Color.fromARGB(255, 189, 28, 0),
+          elevation: 0,
+        ),
+      ),
       backgroundColor: Color.fromARGB(255, 247, 247, 247),
       body: Stack(
         children: [

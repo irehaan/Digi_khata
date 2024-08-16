@@ -10,18 +10,16 @@ class BusinessReadyState extends State<BusinessReady> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(0),
+        child: AppBar(
+          backgroundColor: Color.fromARGB(255, 189, 28, 0),
+          elevation: 0,
+        ),
+      ),
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              height: 29,
-              color: Color.fromARGB(255, 255, 60, 0),
-            ),
-          ),
           Positioned(
             top: 250,
             left: 0,

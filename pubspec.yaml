@@ -66,6 +66,7 @@ flutter:
     - assets/home_img/customers/
     - assets/home_img/suppliers/
     - assets/home_img/banks/
+    - assets/home_img/all/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
