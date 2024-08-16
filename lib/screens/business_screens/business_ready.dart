@@ -1,7 +1,10 @@
 import 'package:digi_khata/screens/main_app_screens/home/customers.dart';
+import 'package:digi_khata/widgets/language_selection_screen/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class BusinessReady extends StatefulWidget {
+  const BusinessReady({super.key});
+
   @override
   BusinessReadyState createState() => BusinessReadyState();
 }
@@ -10,13 +13,7 @@ class BusinessReadyState extends State<BusinessReady> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(0),
-        child: AppBar(
-          backgroundColor: Color.fromARGB(255, 189, 28, 0),
-          elevation: 0,
-        ),
-      ),
+      appBar: const CustomAppBar(),
       backgroundColor: Colors.white,
       body: Stack(
         children: [
@@ -34,7 +31,7 @@ class BusinessReadyState extends State<BusinessReady> {
                     width: 120,
                   ),
                   SizedBox(height: 12),
-                  Text(
+                  const Text(
                     'Congratulations',
                     style: TextStyle(
                       color: Color.fromARGB(255, 255, 60, 0),
@@ -43,7 +40,7 @@ class BusinessReadyState extends State<BusinessReady> {
                     ),
                   ),
                   SizedBox(height: 8),
-                  Text(
+                  const Text(
                     'Business is ready for use',
                     style: TextStyle(
                       color: Colors.black,
@@ -61,7 +58,7 @@ class BusinessReadyState extends State<BusinessReady> {
             child: Center(
               child: Container(
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color.fromARGB(255, 255, 38, 0),
                       Color.fromARGB(255, 218, 98, 1),
@@ -78,10 +75,6 @@ class BusinessReadyState extends State<BusinessReady> {
                       MaterialPageRoute(builder: (context) => Customers()),
                     );
                   },
-                  child: Text(
-                    'START',
-                    style: TextStyle(color: Colors.white),
-                  ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
                     padding:
@@ -90,6 +83,10 @@ class BusinessReadyState extends State<BusinessReady> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(45),
                     ),
+                  ),
+                  child: const Text(
+                    'START',
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),

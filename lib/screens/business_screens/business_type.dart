@@ -1,10 +1,16 @@
+import 'package:digi_khata/widgets/business_screens.dart/business_type_buttons_widget.dart';
+import 'package:digi_khata/widgets/business_screens.dart/business_type_textfield_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:digi_khata/widgets/business_screens.dart/gradient_header.dart';
+import 'package:digi_khata/widgets/business_screens.dart/next_button.dart';
+import 'package:digi_khata/widgets/language_selection_screen/custom_appbar.dart';
 import 'business_category.dart';
-import 'package:flutter_animated_button/flutter_animated_button.dart';
-import 'package:digi_khata/widgets/cards_widget.dart';
+import 'package:digi_khata/widgets/business_screens.dart/cards_widget.dart';
 import 'package:digi_khata/screens/image_paths.dart';
 
 class BusinessType extends StatefulWidget {
+  const BusinessType({super.key});
+
   @override
   BusinessTypeState createState() => BusinessTypeState();
 }
@@ -12,9 +18,9 @@ class BusinessType extends StatefulWidget {
 class BusinessTypeState extends State<BusinessType> {
   int? _selectedButtonIndex;
   bool _isOthersSelected = false;
+  final TextEditingController _businessTypeController = TextEditingController();
 
   final List<String> cardTitles = List<String>.filled(12, " ");
-
   final List<String> buttonImages = [
     'assets/dg18.png',
     'assets/dg19.png',
@@ -58,43 +64,14 @@ class BusinessTypeState extends State<BusinessType> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(0),
-        child: AppBar(
-          backgroundColor: Color.fromARGB(255, 189, 28, 0),
-          elevation: 0,
-        ),
-      ),
+      appBar: const CustomAppBar(),
       backgroundColor: Color.fromARGB(255, 247, 247, 247),
       body: Stack(
         children: [
-          Column(
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: double.infinity,
-                height: 120,
-                padding: EdgeInsets.all(40),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color.fromARGB(255, 218, 98, 1),
-                      Color.fromARGB(255, 255, 38, 0),
-                    ],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    'Set up DigiKhata',
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
+              GradientHeader(title: 'Set up DigiKhata'),
             ],
           ),
           Positioned(
@@ -120,148 +97,17 @@ class BusinessTypeState extends State<BusinessType> {
                     ),
                   ),
                   SizedBox(height: 2),
-                  Text(
-                    'What is your Business Type?',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  BusinessTypeButtonsWidget(
+                    buttonImages: buttonImages,
+                    buttonTexts: buttonTexts,
+                    selectedButtonIndex: _selectedButtonIndex,
+                    isOthersSelected: _isOthersSelected,
+                    onButtonPressed: _onButtonPressed,
+                    onAllPressed: _onAllPressed,
                   ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
-                    child: GridView.count(
-                      shrinkWrap: true,
-                      childAspectRatio: 3,
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 11,
-                      mainAxisSpacing: 8.0,
-                      children: _isOthersSelected
-                          ? [
-                              ElevatedButton(
-                                onPressed: () {
-                                  _onAllPressed();
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(40),
-                                  ),
-                                  padding: EdgeInsets.all(14),
-                                  elevation: 1,
-                                  shadowColor: Color.fromARGB(255, 0, 0, 0),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      buttonImages[4],
-                                      width: 29,
-                                      height: 200,
-                                    ),
-                                    SizedBox(width: 8),
-                                    Text(
-                                      'All',
-                                      style: TextStyle(
-                                          fontSize: 14,
-                                          color: const Color.fromARGB(
-                                              255, 0, 0, 0)),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(40),
-                                  ),
-                                  padding: EdgeInsets.all(14),
-                                  elevation: 2,
-                                  shadowColor: Color.fromARGB(255, 0, 0, 0),
-                                  side: BorderSide(
-                                      color: Color.fromARGB(255, 245, 58, 1),
-                                      width: 2),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      buttonImages[5],
-                                      width: 29,
-                                      height: 100,
-                                    ),
-                                    SizedBox(width: 8),
-                                    Text(
-                                      'Others',
-                                      style: TextStyle(
-                                          fontSize: 14,
-                                          color: const Color.fromARGB(
-                                              255, 0, 0, 0)),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ]
-                          : List.generate(buttonTexts.length, (index) {
-                              return ElevatedButton(
-                                onPressed: () {
-                                  _onButtonPressed(index);
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(40),
-                                  ),
-                                  padding: EdgeInsets.all(14),
-                                  elevation: 2,
-                                  shadowColor: Color.fromARGB(255, 0, 0, 0),
-                                  side: BorderSide(
-                                      color: _selectedButtonIndex == index
-                                          ? Color.fromARGB(255, 245, 58, 1)
-                                          : Color.fromARGB(255, 255, 255, 255),
-                                      width: 2),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      buttonImages[index],
-                                      width: 29,
-                                      height: 100,
-                                    ),
-                                    SizedBox(width: 8),
-                                    Text(
-                                      buttonTexts[index],
-                                      style: TextStyle(
-                                          fontSize: 14,
-                                          color: const Color.fromARGB(
-                                              255, 0, 0, 0)),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            }),
-                    ),
-                  ),
-                  SizedBox(height: 0),
-                  if (_isOthersSelected) ...[
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 16.0, vertical: 3),
-                      child: TextField(
-                        cursorColor: Colors.deepOrange,
-                        decoration: InputDecoration(
-                          labelText: 'Enter business type',
-                          labelStyle: TextStyle(
-                              color: const Color.fromARGB(255, 255, 51, 0),
-                              fontSize: 13),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.deepOrange),
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.deepOrange, width: 2.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                  if (_isOthersSelected)
+                    BusinessTypeTextFieldWidget(
+                        controller: _businessTypeController),
                 ],
               ),
             ),
@@ -271,29 +117,14 @@ class BusinessTypeState extends State<BusinessType> {
             right: 0,
             bottom: 16,
             child: Center(
-              child: AnimatedButton(
-                height: 50,
-                width: 350,
-                text: 'NEXT',
-                isReverse: false,
-                selectedTextColor: const Color.fromARGB(255, 255, 255, 255),
-                selectedBackgroundColor: _buttonColor,
-                transitionType: TransitionType.LEFT_TO_RIGHT,
-                textStyle: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-                backgroundColor: _buttonColor,
-                borderColor: Colors.white,
-                borderRadius: 50,
-                borderWidth: 2,
-                onPress: () {
+              child: NextButton(
+                buttonColor: _buttonColor,
+                onPressed: () {
                   setState(() {
-                    _buttonColor = Color.fromARGB(255, 255, 72, 0);
+                    _buttonColor = const Color.fromARGB(255, 255, 72, 0);
                   });
-                  Future.delayed(Duration(milliseconds: 0), () {
-                    _onNextPressed();
-                  });
+                  Future.delayed(
+                      const Duration(milliseconds: 0), _onNextPressed);
                 },
               ),
             ),
