@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:digi_khata/widgets/buttons/buttons.dart';
-import 'package:digi_khata/widgets/language_grid.dart';
-import 'package:digi_khata/widgets/language_screen_header.dart';
-import 'package:digi_khata/widgets/custom_appbar.dart';
+import 'package:digi_khata/widgets/language_selection_screen/language_grid.dart';
+import 'package:digi_khata/widgets/language_selection_screen/language_screen_header.dart';
+import 'package:digi_khata/widgets/language_selection_screen/custom_appbar.dart';
 import 'mobile_number_setup.dart';
 
 class LanguageSelection extends StatelessWidget {
