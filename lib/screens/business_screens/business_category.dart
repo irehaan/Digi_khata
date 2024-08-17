@@ -1,11 +1,11 @@
-import 'package:digi_khata/widgets/business_screens.dart/gradient_header.dart';
-import 'package:digi_khata/widgets/business_screens.dart/next_button.dart';
+import 'package:digi_khata/widgets/business_screens/gradient_header.dart';
+import 'package:digi_khata/widgets/business_screens/next_button.dart';
 import 'package:digi_khata/widgets/language_selection_screen/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:digi_khata/screens/business_screens/business_address.dart';
-import 'package:digi_khata/widgets/business_screens.dart/cards_widget.dart';
-import 'package:digi_khata/widgets/business_screens.dart/business_category_buttons_widget.dart';
-import 'package:digi_khata/widgets/business_screens.dart/business_category_textfield_widget.dart';
+import 'package:digi_khata/widgets/cards/cards_widget.dart';
+import 'package:digi_khata/widgets/business_screens/business_category_buttons_widget.dart';
+import 'package:digi_khata/widgets/business_screens/business_category_textfield_widget.dart';
 import 'package:digi_khata/screens/image_paths.dart';
 
 class BusinessCategory extends StatefulWidget {

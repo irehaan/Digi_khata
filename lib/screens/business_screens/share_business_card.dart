@@ -1,10 +1,10 @@
-import 'package:digi_khata/widgets/business_screens.dart/action_buttons.dart';
-import 'package:digi_khata/widgets/business_screens.dart/card_completion_info.dart';
+import 'package:digi_khata/widgets/business_screens/action_buttons.dart';
+import 'package:digi_khata/widgets/business_screens/card_completion_info.dart';
 import 'package:flutter/material.dart';
 import 'package:digi_khata/screens/business_screens/business_ready.dart';
-import 'package:digi_khata/widgets/business_screens.dart/gradient_header.dart';
+import 'package:digi_khata/widgets/business_screens/gradient_header.dart';
 import 'package:digi_khata/widgets/language_selection_screen/custom_appbar.dart';
-import 'package:digi_khata/widgets/business_screens.dart/cards_widget.dart';
+import 'package:digi_khata/widgets/cards/cards_widget.dart';
 import 'package:digi_khata/screens/image_paths.dart';
 
 class ShareBusinessCard extends StatefulWidget {

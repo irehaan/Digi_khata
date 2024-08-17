@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:digi_khata/screens/main_app_screens/home/suppliers.dart';
 import 'package:digi_khata/screens/main_app_screens/home/banks.dart';
+import 'package:digi_khata/widgets/main_screen_customer/gradient_header_customer.dart';
 
 class All extends StatefulWidget {
   @override

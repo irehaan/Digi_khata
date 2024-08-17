@@ -1,10 +1,10 @@
-import 'package:digi_khata/widgets/business_screens.dart/gradient_header.dart';
-import 'package:digi_khata/widgets/business_screens.dart/next_button.dart';
-import 'package:digi_khata/widgets/business_screens.dart/business_name_form.dart';
+import 'package:digi_khata/widgets/business_screens/gradient_header.dart';
+import 'package:digi_khata/widgets/business_screens/next_button.dart';
+import 'package:digi_khata/widgets/business_screens/business_name_form.dart';
 import 'package:digi_khata/widgets/language_selection_screen/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'business_type.dart';
-import 'package:digi_khata/widgets/business_screens.dart/cards_widget.dart';
+import 'package:digi_khata/widgets/cards/cards_widget.dart';
 import 'package:digi_khata/screens/image_paths.dart';
 
 class BusinessNameSetup extends StatefulWidget {
