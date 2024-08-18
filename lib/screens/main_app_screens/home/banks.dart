@@ -1,3 +1,4 @@
+import 'package:digi_khata/widgets/home_custom_button_text.dart';
 import 'package:digi_khata/widgets/language_selection_screen/custom_appbar.dart';
 import 'package:digi_khata/widgets/main_screen_banks/gradient_header_bank.dart';
 import 'package:flutter/material.dart';
@@ -18,9 +19,9 @@ class bank extends StatelessWidget {
               Container(
                 width: double.infinity,
                 height: 120,
-                color: Color.fromARGB(255, 245, 245, 245),
+                color: const Color.fromARGB(255, 245, 245, 245),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Container(
                 width: double.infinity,
                 child: Align(
@@ -29,19 +30,19 @@ class bank extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Image.asset(
-                        'assets/home_img/banks/banks.png',
+                        'assets/dg40.png',
                         height: 200,
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       const Text(
-                        '1- Add banks',
+                        '1- Add customers',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
                           color: Color.fromARGB(255, 126, 126, 126),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       const Text(
                         '2- Add entries & maintain khata',
                         style: TextStyle(
@@ -50,9 +51,9 @@ class bank extends StatelessWidget {
                           color: Color.fromARGB(255, 126, 126, 126),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       const Text(
-                        '3- Manage your bank balance',
+                        '3- Send payment reminders',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
@@ -63,7 +64,7 @@ class bank extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 110),
+              const SizedBox(height: 110),
               const Divider(
                 color: Color.fromARGB(255, 224, 224, 224),
                 thickness: 1,
@@ -73,10 +74,26 @@ class bank extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    _buildImageWithText('assets/dg1.png', 'Home'),
-                    _buildImageWithText('assets/dg41.png', 'Pos'),
-                    _buildImageWithText('assets/dg42.png', 'Money'),
-                    _buildImageWithText('assets/dg43.png', 'More'),
+                    CustomButton(
+                      imagePath: 'assets/dg1.png',
+                      text: 'Home',
+                      onPressed: () {},
+                    ),
+                    CustomButton(
+                      imagePath: 'assets/dg41.png',
+                      text: 'Pos',
+                      onPressed: () {},
+                    ),
+                    CustomButton(
+                      imagePath: 'assets/dg42.png',
+                      text: 'Money',
+                      onPressed: () {},
+                    ),
+                    CustomButton(
+                      imagePath: 'assets/dg43.png',
+                      text: 'More',
+                      onPressed: () {},
+                    ),
                   ],
                 ),
               ),
@@ -94,14 +111,14 @@ class bank extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12.0),
                 boxShadow: [
                   BoxShadow(
-                    color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.1),
+                    color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.1),
                     blurRadius: 1,
                     offset: Offset(0, 2),
                   ),
                 ],
               ),
               child: Padding(
-                padding: EdgeInsets.only(left: 16, top: 5, right: 16),
+                padding: const EdgeInsets.only(left: 16, top: 5, right: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -116,9 +133,9 @@ class bank extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     Padding(
-                      padding: EdgeInsets.only(top: 1, left: 0),
+                      padding: const EdgeInsets.only(top: 1, left: 50),
                       child: Row(
                         children: [
                           Container(
@@ -137,7 +154,7 @@ class bank extends StatelessWidget {
                                       ),
                                     ),
                                     Text(
-                                      'Total in for Aug',
+                                      'You will give',
                                       style: TextStyle(
                                         fontSize: 11,
                                         fontWeight: FontWeight.bold,
@@ -147,11 +164,12 @@ class bank extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                SizedBox(width: 30),
+                                const SizedBox(width: 30),
                                 Container(
                                   height: 30,
-                                  padding: EdgeInsets.symmetric(horizontal: 7),
-                                  child: Center(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 7),
+                                  child: const Center(
                                     child: VerticalDivider(
                                       color: Color.fromARGB(255, 15, 15, 15),
                                       thickness: 0.2,
@@ -159,7 +177,7 @@ class bank extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: 20),
+                                const SizedBox(width: 20),
                                 const Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
@@ -168,11 +186,11 @@ class bank extends StatelessWidget {
                                       style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold,
-                                        color: Color.fromARGB(255, 0, 170, 23),
+                                        color: Color.fromARGB(255, 209, 0, 0),
                                       ),
                                     ),
                                     Text(
-                                      "Bank Balance",
+                                      'You will give',
                                       style: TextStyle(
                                         fontSize: 11,
                                         fontWeight: FontWeight.bold,
@@ -182,12 +200,12 @@ class bank extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                SizedBox(width: 10),
+                                const SizedBox(width: 10),
                                 Container(
                                   height: 30,
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 8.0),
-                                  child: Center(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0),
+                                  child: const Center(
                                     child: VerticalDivider(
                                       color: Color.fromARGB(255, 26, 26, 26),
                                       thickness: 0.2,
@@ -195,7 +213,7 @@ class bank extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: 30),
+                                const SizedBox(width: 10),
                                 IconButton(
                                   icon: const Icon(
                                     Icons.keyboard_arrow_right_sharp,
@@ -251,9 +269,10 @@ class bank extends StatelessWidget {
                           borderRadius: BorderRadius.circular(13),
                         ),
                         elevation: 2,
-                        padding:
-                            EdgeInsets.symmetric(vertical: 8, horizontal: 4),
-                        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 4),
+                        backgroundColor:
+                            const Color.fromARGB(255, 255, 255, 255),
                       ),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -267,7 +286,7 @@ class bank extends StatelessWidget {
                           Text(
                             buttonTexts[index],
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 10,
                               color: Colors.black,
                             ),
@@ -309,7 +328,7 @@ class bank extends StatelessWidget {
                 SizedBox(width: 50),
                 Container(
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       colors: [
                         Color.fromARGB(255, 255, 54, 19),
                         Color.fromARGB(255, 218, 98, 1),
@@ -324,13 +343,13 @@ class bank extends StatelessWidget {
                     icon: const Icon(Icons.person_add_alt_1_outlined,
                         color: Colors.white),
                     label: const Text(
-                      "ADD BANK",
+                      "ADD CUSTOMER",
                       style: TextStyle(color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.transparent,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 12),
                       elevation: 0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
@@ -343,26 +362,6 @@ class bank extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildImageWithText(String imagePath, String text) {
-    return Column(
-      children: [
-        Image.asset(
-          imagePath,
-          height: 40,
-          width: 50,
-        ),
-        SizedBox(width: 10),
-        Text(
-          text,
-          style: const TextStyle(
-            fontSize: 12,
-            color: Color.fromARGB(255, 126, 126, 126),
-          ),
-        ),
-      ],
     );
   }
 }

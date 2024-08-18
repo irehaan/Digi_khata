@@ -2,6 +2,7 @@ import 'package:digi_khata/widgets/language_selection_screen/custom_appbar.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:digi_khata/widgets/main_screen_customer/gradient_header_customer.dart';
+import 'package:digi_khata/widgets/home_custom_button_text.dart';
 
 class Customers extends StatefulWidget {
   const Customers({super.key});
@@ -25,9 +26,9 @@ class _CustomersState extends State<Customers> {
               Container(
                 width: double.infinity,
                 height: 120,
-                color: Color.fromARGB(255, 245, 245, 245),
+                color: const Color.fromARGB(255, 245, 245, 245),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Container(
                 width: double.infinity,
                 child: Align(
@@ -39,7 +40,7 @@ class _CustomersState extends State<Customers> {
                         'assets/dg40.png',
                         height: 200,
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       const Text(
                         '1- Add customers',
                         style: TextStyle(
@@ -48,7 +49,7 @@ class _CustomersState extends State<Customers> {
                           color: Color.fromARGB(255, 126, 126, 126),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       const Text(
                         '2- Add entries & maintain khata',
                         style: TextStyle(
@@ -57,7 +58,7 @@ class _CustomersState extends State<Customers> {
                           color: Color.fromARGB(255, 126, 126, 126),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       const Text(
                         '3- Send payment reminders',
                         style: TextStyle(
@@ -70,7 +71,7 @@ class _CustomersState extends State<Customers> {
                   ),
                 ),
               ),
-              SizedBox(height: 110),
+              const SizedBox(height: 110),
               const Divider(
                 color: Color.fromARGB(255, 224, 224, 224),
                 thickness: 1,
@@ -80,10 +81,26 @@ class _CustomersState extends State<Customers> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    _buildImageWithText('assets/dg1.png', 'Home'),
-                    _buildImageWithText('assets/dg41.png', 'Pos'),
-                    _buildImageWithText('assets/dg42.png', 'Money'),
-                    _buildImageWithText('assets/dg43.png', 'More'),
+                    CustomButton(
+                      imagePath: 'assets/dg1.png',
+                      text: 'Home',
+                      onPressed: () {},
+                    ),
+                    CustomButton(
+                      imagePath: 'assets/dg41.png',
+                      text: 'Pos',
+                      onPressed: () {},
+                    ),
+                    CustomButton(
+                      imagePath: 'assets/dg42.png',
+                      text: 'Money',
+                      onPressed: () {},
+                    ),
+                    CustomButton(
+                      imagePath: 'assets/dg43.png',
+                      text: 'More',
+                      onPressed: () {},
+                    ),
                   ],
                 ),
               ),
@@ -101,14 +118,14 @@ class _CustomersState extends State<Customers> {
                 borderRadius: BorderRadius.circular(12.0),
                 boxShadow: [
                   BoxShadow(
-                    color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.1),
+                    color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.1),
                     blurRadius: 1,
                     offset: Offset(0, 2),
                   ),
                 ],
               ),
               child: Padding(
-                padding: EdgeInsets.only(left: 16, top: 5, right: 16),
+                padding: const EdgeInsets.only(left: 16, top: 5, right: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -123,9 +140,9 @@ class _CustomersState extends State<Customers> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     Padding(
-                      padding: EdgeInsets.only(top: 1, left: 50),
+                      padding: const EdgeInsets.only(top: 1, left: 50),
                       child: Row(
                         children: [
                           Container(
@@ -154,11 +171,12 @@ class _CustomersState extends State<Customers> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(width: 30),
+                                const SizedBox(width: 30),
                                 Container(
                                   height: 30,
-                                  padding: EdgeInsets.symmetric(horizontal: 7),
-                                  child: Center(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 7),
+                                  child: const Center(
                                     child: VerticalDivider(
                                       color: Color.fromARGB(255, 15, 15, 15),
                                       thickness: 0.2,
@@ -166,7 +184,7 @@ class _CustomersState extends State<Customers> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: 20),
+                                const SizedBox(width: 20),
                                 const Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
@@ -189,12 +207,12 @@ class _CustomersState extends State<Customers> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(width: 10),
+                                const SizedBox(width: 10),
                                 Container(
                                   height: 30,
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 8.0),
-                                  child: Center(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0),
+                                  child: const Center(
                                     child: VerticalDivider(
                                       color: Color.fromARGB(255, 26, 26, 26),
                                       thickness: 0.2,
@@ -202,7 +220,7 @@ class _CustomersState extends State<Customers> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: 10),
+                                const SizedBox(width: 10),
                                 IconButton(
                                   icon: const Icon(
                                     Icons.keyboard_arrow_right_sharp,
@@ -258,9 +276,10 @@ class _CustomersState extends State<Customers> {
                           borderRadius: BorderRadius.circular(13),
                         ),
                         elevation: 2,
-                        padding:
-                            EdgeInsets.symmetric(vertical: 8, horizontal: 4),
-                        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 4),
+                        backgroundColor:
+                            const Color.fromARGB(255, 255, 255, 255),
                       ),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -274,7 +293,7 @@ class _CustomersState extends State<Customers> {
                           Text(
                             buttonTexts[index],
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 10,
                               color: Colors.black,
                             ),
@@ -316,7 +335,7 @@ class _CustomersState extends State<Customers> {
                 SizedBox(width: 50),
                 Container(
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       colors: [
                         Color.fromARGB(255, 255, 54, 19),
                         Color.fromARGB(255, 218, 98, 1),
@@ -336,8 +355,8 @@ class _CustomersState extends State<Customers> {
                     ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.transparent,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 12),
                       elevation: 0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
@@ -350,26 +369,6 @@ class _CustomersState extends State<Customers> {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildImageWithText(String imagePath, String text) {
-    return Column(
-      children: [
-        Image.asset(
-          imagePath,
-          height: 40,
-          width: 50,
-        ),
-        SizedBox(width: 10),
-        Text(
-          text,
-          style: const TextStyle(
-            fontSize: 12,
-            color: Color.fromARGB(255, 126, 126, 126),
-          ),
-        ),
-      ],
     );
   }
 }
