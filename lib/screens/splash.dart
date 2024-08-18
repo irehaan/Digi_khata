@@ -1,7 +1,10 @@
+import 'package:digi_khata/widgets/language_selection_screen/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'account_setup_screens/language_selection.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -10,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => LanguageSelection()),
@@ -21,6 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -31,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
               height: 200,
             ),
             SizedBox(height: 5),
-            Text.rich(
+            const Text.rich(
               TextSpan(
                 children: [
                   TextSpan(

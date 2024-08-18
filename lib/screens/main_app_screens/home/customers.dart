@@ -273,7 +273,7 @@ class _CustomersState extends State<Customers> {
                       duration: 500.ms,
                       curve: Curves.easeInOut,
                     ),
-                SizedBox(width: 50),
+                const SizedBox(width: 50),
                 Container(
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
