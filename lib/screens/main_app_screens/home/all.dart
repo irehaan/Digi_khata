@@ -1,9 +1,9 @@
+import 'package:digi_khata/widgets/home/add_customer_button.dart';
 import 'package:digi_khata/widgets/home/custom_button_grid.dart';
 import 'package:digi_khata/widgets/home/home_custom_button_text.dart';
 import 'package:digi_khata/widgets/language_selection_screen/custom_appbar.dart';
 import 'package:digi_khata/widgets/main_screen_all/gradient_header_all.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 
 class All extends StatefulWidget {
   const All({super.key});
@@ -35,10 +35,10 @@ class _AllState extends State<All> {
                 child: Align(
                   alignment: Alignment.center,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Image.asset(
-                        'assets/dg40.png',
+                        'assets/home_img/all/all.png',
                         height: 200,
                       ),
                       const SizedBox(height: 20),
@@ -247,67 +247,7 @@ class _AllState extends State<All> {
             right: 12,
             child: CustomButtonGrid(),
           ),
-          Positioned(
-            bottom: 75,
-            right: 20,
-            child: Row(
-              children: [
-                const Icon(
-                  Icons.arrow_right_alt_rounded,
-                  color: Color.fromARGB(255, 255, 60, 0),
-                  size: 53,
-                )
-                    .animate(
-                      onPlay: (controller) => controller.loop(),
-                    )
-                    .moveX(
-                      begin: 0,
-                      end: 20,
-                      duration: 500.ms,
-                      curve: Curves.easeInOut,
-                    )
-                    .then()
-                    .moveX(
-                      begin: 20,
-                      end: 0,
-                      duration: 500.ms,
-                      curve: Curves.easeInOut,
-                    ),
-                SizedBox(width: 50),
-                Container(
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color.fromARGB(255, 255, 54, 19),
-                        Color.fromARGB(255, 218, 98, 1),
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.person_add_alt_1_outlined,
-                        color: Colors.white),
-                    label: const Text(
-                      "ADD CUSTOMER",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 12),
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ),
+          const AddCustomerButton(),
         ],
       ),
     );

@@ -30,15 +30,15 @@ class bank extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.center,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Image.asset(
-                        'assets/dg40.png',
+                        'assets/home_img/banks/banks.png',
                         height: 200,
                       ),
                       const SizedBox(height: 20),
                       const Text(
-                        '1- Add customers',
+                        '1- Add banks',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
@@ -56,7 +56,7 @@ class bank extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       const Text(
-                        '3- Send payment reminders',
+                        '3- Manage your bank balance',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
@@ -286,7 +286,7 @@ class bank extends StatelessWidget {
                     icon: const Icon(Icons.person_add_alt_1_outlined,
                         color: Colors.white),
                     label: const Text(
-                      "ADD CUSTOMER",
+                      "ADD BANK",
                       style: TextStyle(color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(

@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => LanguageSelection()),
+        MaterialPageRoute(builder: (context) => const LanguageSelection()),
       );
     });
   }
@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
               width: 200,
               height: 200,
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             const Text.rich(
               TextSpan(
                 children: [

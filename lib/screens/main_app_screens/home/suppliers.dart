@@ -35,15 +35,15 @@ class _SuppliersState extends State<Suppliers> {
                 child: Align(
                   alignment: Alignment.center,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Image.asset(
-                        'assets/dg40.png',
+                        'assets/home_img/suppliers/suppliers.png',
                         height: 200,
                       ),
                       const SizedBox(height: 20),
                       const Text(
-                        '1- Add customers',
+                        '1- Add Suppliers',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
@@ -61,7 +61,7 @@ class _SuppliersState extends State<Suppliers> {
                       ),
                       const SizedBox(height: 10),
                       const Text(
-                        '3- Send payment reminders',
+                        '3- Manage your purchases',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
@@ -278,8 +278,8 @@ class _SuppliersState extends State<Suppliers> {
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
                       colors: [
-                        Color.fromARGB(255, 255, 54, 19),
-                        Color.fromARGB(255, 218, 98, 1),
+                        Color.fromARGB(255, 0, 158, 0),
+                        Color.fromARGB(255, 105, 196, 1),
                       ],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
@@ -291,13 +291,13 @@ class _SuppliersState extends State<Suppliers> {
                     icon: const Icon(Icons.person_add_alt_1_outlined,
                         color: Colors.white),
                     label: const Text(
-                      "ADD CUSTOMER",
+                      "ADD SUPPLIER",
                       style: TextStyle(color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.transparent,
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 12),
+                          horizontal: 10, vertical: 12),
                       elevation: 0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
