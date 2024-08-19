@@ -151,7 +151,7 @@ class _CustomersState extends State<Customers> {
                             child: Row(
                               children: [
                                 const Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Text(
                                       'Rs 0',

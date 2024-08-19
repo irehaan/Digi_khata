@@ -1,3 +1,4 @@
+import 'package:digi_khata/screens/main_app_screens/home/customer_add_customer/add_customer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -46,7 +47,12 @@ class AddCustomerButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
             ),
             child: ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AddCustomer()),
+                );
+              },
               icon: const Icon(Icons.person_add_alt_1_outlined,
                   color: Colors.white),
               label: const Text(
