@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "235980589398",
+    "project_id": "digikhata-616f4",
+    "storage_bucket": "digikhata-616f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235980589398:android:2060f2f3dc5759f0b16ef7",
+        "android_client_info": {
+          "package_name": "com.example.digi_khata"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAj8aW57AHNWiQ8YJ4YJhT9-KUxrO5pSE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
