@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,15 +25,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -51,7 +42,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDAj8aW57AHNWiQ8YJ4YJhT9-KUxrO5pSE',
-    appId: '1:235980589398:android:2060f2f3dc5759f0b16ef7',
+    appId: '1:235980589398:android:618e4a478d76a38ab16ef7',
     messagingSenderId: '235980589398',
     projectId: 'digikhata-616f4',
     storageBucket: 'digikhata-616f4.appspot.com',
@@ -63,6 +54,40 @@ class DefaultFirebaseOptions {
     messagingSenderId: '235980589398',
     projectId: 'digikhata-616f4',
     storageBucket: 'digikhata-616f4.appspot.com',
+    androidClientId: '235980589398-572eb39vm9jfkmt8iic4t404ghqc43n8.apps.googleusercontent.com',
+    iosClientId: '235980589398-v1qgiufs6n6smv9eq64i7294pic5tfn6.apps.googleusercontent.com',
     iosBundleId: 'com.example.digiKhata',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBcu0GBRhWe6whFfPUHU6rT8NhuWBP76Tw',
+    appId: '1:235980589398:web:4e4dc8561317e93fb16ef7',
+    messagingSenderId: '235980589398',
+    projectId: 'digikhata-616f4',
+    authDomain: 'digikhata-616f4.firebaseapp.com',
+    storageBucket: 'digikhata-616f4.appspot.com',
+    measurementId: 'G-0RDPHP9FXS',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBKN53NbuWogqLIjpv44ldivTK0DQXBJTY',
+    appId: '1:235980589398:ios:78215d189f05155ab16ef7',
+    messagingSenderId: '235980589398',
+    projectId: 'digikhata-616f4',
+    storageBucket: 'digikhata-616f4.appspot.com',
+    androidClientId: '235980589398-572eb39vm9jfkmt8iic4t404ghqc43n8.apps.googleusercontent.com',
+    iosClientId: '235980589398-v1qgiufs6n6smv9eq64i7294pic5tfn6.apps.googleusercontent.com',
+    iosBundleId: 'com.example.digiKhata',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyBcu0GBRhWe6whFfPUHU6rT8NhuWBP76Tw',
+    appId: '1:235980589398:web:65da21c93e702e77b16ef7',
+    messagingSenderId: '235980589398',
+    projectId: 'digikhata-616f4',
+    authDomain: 'digikhata-616f4.firebaseapp.com',
+    storageBucket: 'digikhata-616f4.appspot.com',
+    measurementId: 'G-6SWT8FP556',
+  );
+
 }

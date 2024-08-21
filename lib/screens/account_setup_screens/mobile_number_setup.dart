@@ -1,9 +1,10 @@
+import 'package:digi_khata/otpscreen.dart';
 import 'package:digi_khata/widgets/language_selection_screen/custom_appbar.dart';
 import 'package:digi_khata/widgets/mobile_number_screen/continue_button.dart';
 import 'package:digi_khata/widgets/mobile_number_screen/digi_khata_header.dart';
 import 'package:digi_khata/widgets/mobile_number_screen/mobile_number_input.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../business_screens/owner_name_setup.dart';
 
 class MobileNumberScreen extends StatefulWidget {
   const MobileNumberScreen({super.key});
@@ -13,15 +14,15 @@ class MobileNumberScreen extends StatefulWidget {
 }
 
 class _MobileNumberScreenState extends State<MobileNumberScreen> {
-  final TextEditingController _controller = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
   bool _isButtonEnabled = false;
 
   @override
   void initState() {
     super.initState();
-    _controller.addListener(() {
+    phoneController.addListener(() {
       setState(() {
-        _isButtonEnabled = _controller.text.length >= 7;
+        _isButtonEnabled = phoneController.text.length >= 13;
       });
     });
   }
@@ -54,16 +55,27 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
               ),
             ),
             const SizedBox(height: 32),
-            MobileNumberInput(controller: _controller),
+            MobileNumberInput(controller: phoneController),
             const Spacer(),
             Center(
               child: ContinueButton(
                 isEnabled: _isButtonEnabled,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => OwnerNameSetup()),
-                  );
+                onPressed: () async {
+                  await FirebaseAuth.instance.verifyPhoneNumber(
+                      verificationCompleted:
+                          (PhoneAuthCredential credential) {},
+                      verificationFailed: (FirebaseAuthException ex) {},
+                      codeSent: (String verificationid, int? resendtoken) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Otpscreen(
+                                    verificationid: verificationid,
+                                  )),
+                        );
+                      },
+                      codeAutoRetrievalTimeout: (String verificationId) {},
+                      phoneNumber: phoneController.text.toString());
                 },
               ),
             ),
