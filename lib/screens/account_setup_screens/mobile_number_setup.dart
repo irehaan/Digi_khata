@@ -1,10 +1,12 @@
 import 'package:digi_khata/otpscreen.dart';
+import 'package:digi_khata/screens/business_screens/owner_name_setup.dart';
 import 'package:digi_khata/widgets/language_selection_screen/custom_appbar.dart';
 import 'package:digi_khata/widgets/mobile_number_screen/continue_button.dart';
 import 'package:digi_khata/widgets/mobile_number_screen/digi_khata_header.dart';
 import 'package:digi_khata/widgets/mobile_number_screen/mobile_number_input.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MobileNumberScreen extends StatefulWidget {
   const MobileNumberScreen({super.key});
@@ -22,7 +24,7 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
     super.initState();
     phoneController.addListener(() {
       setState(() {
-        _isButtonEnabled = phoneController.text.length >= 13;
+        _isButtonEnabled = phoneController.text.length >= 7;
       });
     });
   }
@@ -61,21 +63,52 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
               child: ContinueButton(
                 isEnabled: _isButtonEnabled,
                 onPressed: () async {
-                  await FirebaseAuth.instance.verifyPhoneNumber(
-                      verificationCompleted:
-                          (PhoneAuthCredential credential) {},
-                      verificationFailed: (FirebaseAuthException ex) {},
-                      codeSent: (String verificationid, int? resendtoken) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Otpscreen(
-                                    verificationid: verificationid,
-                                  )),
-                        );
-                      },
-                      codeAutoRetrievalTimeout: (String verificationId) {},
-                      phoneNumber: phoneController.text.toString());
+                  String phoneNumber = phoneController.text.trim();
+
+                  // if (!phoneNumber.startsWith('+')) {
+                  //   phoneNumber =
+                  //       '+$phoneNumber'; // Ensure country code is included
+                  // }
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => OwnerNameSetup(),
+                  //   ),
+                  // );
+
+                  Get.to(OwnerNameSetup());
+
+                  //   await FirebaseAuth.instance.verifyPhoneNumber(
+                  //     phoneNumber: phoneNumber,
+                  //     verificationCompleted: (PhoneAuthCredential credential) {
+                  //       // Handle auto-retrieval or instant verification
+                  //       print("Verification Completed: $credential");
+                  //     },
+                  //     verificationFailed: (FirebaseAuthException ex) {
+                  //       // Handle errors like too many requests
+                  //       print("Verification Failed: ${ex.message}");
+                  //       ScaffoldMessenger.of(context).showSnackBar(
+                  //         SnackBar(
+                  //             content:
+                  //                 Text("Verification failed: ${ex.message}")),
+                  //       );
+                  //     },
+                  //     codeSent: (String verificationId, int? resendToken) {
+                  //       // Navigate to the OTP screen
+                  //       print(" ");
+                  //       Navigator.push(
+                  //         context,
+                  //         MaterialPageRoute(
+                  //           builder: (context) =>
+                  //               Otpscreen(verificationid: verificationId),
+                  //         ),
+                  //       );
+                  //     },
+                  //     codeAutoRetrievalTimeout: (String verificationId) {
+                  //       // Handle code auto-retrieval timeout
+                  //       print("Code Auto-Retrieval Timeout: $verificationId");
+                  //     },
+                  //   );
                 },
               ),
             ),

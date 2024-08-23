@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class OwnerNameForm extends StatelessWidget {
   final TextEditingController controller;
+  void Function(String)? onChanged;
 
-  const OwnerNameForm({required this.controller, super.key});
+  OwnerNameForm({required this.controller, this.onChanged, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,7 @@ class OwnerNameForm extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: TextField(
             controller: controller,
+            onChanged: onChanged,
             cursorColor: const Color.fromARGB(255, 255, 72, 0),
             decoration: InputDecoration(
               prefixIcon: const Icon(

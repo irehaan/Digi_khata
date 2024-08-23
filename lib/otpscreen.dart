@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Otpscreen extends StatefulWidget {
-  String verificationid;
+  final String verificationid;
   Otpscreen({super.key, required this.verificationid});
 
   @override
