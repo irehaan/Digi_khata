@@ -69,35 +69,35 @@ class OwnerNameState extends State<OwnerNameSetup> {
                         imagePaths: imagePaths,
                       ),
                     ),
-                    Text(
-                      '${ctrl2.custName.value}',
-                      style: TextStyle(
-                          color: ctrl2.darkMode.value
-                              ? Colors.amberAccent
-                              : Colors.cyanAccent),
-                    ),
-                    // Text(Provider.of<Homecontroller>().custnam),
-                    // Text(context.watch<Homecontroller>().custNam),
-                    Obx(
-                      () {
-                        return Text(ctrl.custName.value);
-                      },
-                    ),
-                    const SizedBox(height: 16),
-                    OwnerNameForm(
-                      controller: _ownerNameController,
-                      onChanged: (p0) {
-                        ctrl.updatevalue(_ownerNameController.text);
-                        // setState(() {
-                        //   //
-                        // });
-                      },
-                    ),
-                    ElevatedButton(
-                        onPressed: () {
-                          ctrl.updatevalue2();
-                        },
-                        child: Text("Dark Mode")),
+                    // Text(
+                    //   '${ctrl2.custName.value}',
+                    //   style: TextStyle(
+                    //       color: ctrl2.darkMode.value
+                    //           ? Colors.amberAccent
+                    //           : Colors.cyanAccent),
+                    // ),
+                    // // Text(Provider.of<Homecontroller>().custnam),
+                    // // Text(context.watch<Homecontroller>().custNam),
+                    // Obx(
+                    //   () {
+                    //     return Text(ctrl.custName.value);
+                    //   },
+                    // ),
+                    // const SizedBox(height: 16),
+                    // OwnerNameForm(
+                    //   controller: _ownerNameController,
+                    //   onChanged: (p0) {
+                    //     ctrl.updatevalue(_ownerNameController.text);
+                    //     // setState(() {
+                    //     //   //
+                    //     // });
+                    //   },
+                    // ),
+                    // ElevatedButton(
+                    //     onPressed: () {
+                    //       ctrl.updatevalue2();
+                    //     },
+                    //     child: Text("Dark Mode")),
                     SizedBox(height: MediaQuery.of(context).size.width / 1.5),
                     Center(
                       child: NextButton(

@@ -4,7 +4,7 @@
 
 // /// This file contain theme data of the app and initial custom default widget
 // /// configurations
-// class AppThemeData {
+// class AppThemeDark {
 //   static final ThemeData appThemeData = ThemeData(
 //       // Set default font name
 //       fontFamily: 'SF Pro Display',
