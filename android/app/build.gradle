@@ -1,7 +1,8 @@
 plugins {
     id "com.android.application"
     /* groovylint-disable-next-line CompileStatic */
-    id "com.google.gms.google-services" // FlutterFire Configuration
+    id "com.google.gms.google-services"
+    id 'com.google.firebase.crashlytics' // FlutterFire Configuration
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
 }

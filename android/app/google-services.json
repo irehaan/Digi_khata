@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "235980589398-ttjfqvbj8o1n4a1tbcigaq57spdafi70.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.digi_khata",
+            "certificate_hash": "04e995fb9f1f2e426ea79e88360412b15cdda786"
+          }
+        },
+        {
           "client_id": "235980589398-ful2a6iqrsfekut3l3j3ghp0adtmudhh.apps.googleusercontent.com",
           "client_type": 3
         }
