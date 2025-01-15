@@ -1,4 +1,4 @@
-import 'package:digi_khata/controller.dart';
+import 'package:digi_khata/controller/controller.dart';
 import 'package:digi_khata/widgets/cards/cards_widget.dart';
 import 'package:digi_khata/widgets/business_screens/gradient_header.dart';
 import 'package:digi_khata/widgets/business_screens/next_button.dart';

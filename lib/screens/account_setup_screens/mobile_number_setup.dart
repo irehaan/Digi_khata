@@ -1,4 +1,4 @@
-import 'package:digi_khata/otpscreen.dart';
+import 'package:digi_khata/screens/otpscreen.dart';
 import 'package:digi_khata/screens/business_screens/owner_name_setup.dart';
 import 'package:digi_khata/widgets/language_selection_screen/custom_appbar.dart';
 import 'package:digi_khata/widgets/mobile_number_screen/continue_button.dart';

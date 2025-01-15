@@ -1,4 +1,4 @@
-import 'package:digi_khata/controller.dart';
+import 'package:digi_khata/controller/controller.dart';
 import 'package:digi_khata/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

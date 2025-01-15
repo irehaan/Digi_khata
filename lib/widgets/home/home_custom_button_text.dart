@@ -6,21 +6,17 @@ class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   const CustomButton({
-    Key? key,
+    super.key,
     required this.imagePath,
     required this.text,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.zero,
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
+    return InkWell(
+      borderRadius: BorderRadius.circular(5),
+      onTap: onPressed,
       child: Column(
         children: [
           Image.asset(

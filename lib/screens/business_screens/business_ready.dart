@@ -1,4 +1,4 @@
-import 'package:digi_khata/screens/main_app_screens/home/customers.dart';
+import 'package:digi_khata/screens/dashboard/Homepage.dart';
 import 'package:digi_khata/widgets/language_selection_screen/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
@@ -72,7 +72,7 @@ class BusinessReadyState extends State<BusinessReady> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Customers()),
+                      MaterialPageRoute(builder: (context) => Homepage()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
